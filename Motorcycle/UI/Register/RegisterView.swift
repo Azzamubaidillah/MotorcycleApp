@@ -15,9 +15,6 @@ struct RegisterView: View {
     var body: some View {
         NavigationView {
             VStack {
-                Text("Register")
-                    .font(.largeTitle)
-                    .padding()
 
                 TextField("Email", text: $viewModel.email)
                     .textFieldStyle(RoundedBorderTextFieldStyle())
@@ -58,6 +55,7 @@ struct RegisterView: View {
                 )
             }
             .navigationTitle("Register")
+            .navigationBarTitleDisplayMode(.inline)
         }
     }
 }

@@ -8,6 +8,7 @@
 
 import Combine
 import FirebaseAuth
+import FirebaseFirestore
 
 class FirebaseAuthenticationRepository: AuthenticationRepository {
     func register(email: String, password: String, firstName: String, lastName: String) -> AnyPublisher<User, Error> {
@@ -18,6 +19,7 @@ class FirebaseAuthenticationRepository: AuthenticationRepository {
                 } else if let user = authResult?.user {
                     // User registration successful
                     let newUser = User(uid: user.uid, email: email, firstName: firstName, lastName: lastName)
+                    self.createUserDocument(uid: newUser.uid, email: newUser.email, firstName: newUser.firstName, lastName: newUser.lastName)
                     promise(.success(newUser))
                 } else {
                     promise(.failure(AuthenticationError.unknown))
@@ -56,23 +58,24 @@ class FirebaseAuthenticationRepository: AuthenticationRepository {
         }
         .eraseToAnyPublisher()
     }
+    
+    func createUserDocument(uid: String, email: String, firstName: String, lastName: String) {
+        let db = Firestore.firestore()
+        let userRef = db.collection("users").document(uid)
 
-    func getCurrentUser() -> AnyPublisher<User?, Error> {
-        return Future { promise in
-            if let currentUser = Auth.auth().currentUser {
-                // You can create a User object with the user's data
-                let user = User(
-                    uid: currentUser.uid,
-                    email: currentUser.email ?? "",
-                    firstName: "",
-                    lastName: ""
-                )
-                promise(.success(user))
+        userRef.setData([
+            "email": email,
+            "firstName": firstName,
+            "lastName": lastName,
+            // Add any other user-related data here
+        ]) { error in
+            if let error = error {
+                // Handle the Firestore data creation error
+                print("Error creating user document: \(error.localizedDescription)")
             } else {
-                // No user is currently authenticated
-                promise(.success(nil))
+                // User data is successfully stored in Firestore
+                print("User document created successfully.")
             }
         }
-        .eraseToAnyPublisher()
     }
 }

@@ -34,6 +34,11 @@ struct LoginView: View {
                 .background(Color.blue)
                 .foregroundColor(.white)
                 .cornerRadius(8)
+                
+                HStack {
+                    Text("Don't have an account?")
+                    NavigationLink("Register", destination: RegisterView(viewModel: Resolver.resolve()))
+                }
 
                 Spacer()
             }
