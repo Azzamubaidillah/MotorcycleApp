@@ -11,14 +11,20 @@
 		8789C7CF2AAA26AD008E3262 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8789C7CE2AAA26AD008E3262 /* ContentView.swift */; };
 		8789C7D12AAA26B0008E3262 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8789C7D02AAA26B0008E3262 /* Assets.xcassets */; };
 		8789C7D42AAA26B0008E3262 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8789C7D32AAA26B0008E3262 /* Preview Assets.xcassets */; };
+		8789C7DB2AAA3662008E3262 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 8789C7DA2AAA3661008E3262 /* GoogleService-Info.plist */; };
+		F419673379C5D926DB2A7437 /* Pods_Motorcycle.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 232EFFF9B6DE530CB5532044 /* Pods_Motorcycle.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		232EFFF9B6DE530CB5532044 /* Pods_Motorcycle.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Motorcycle.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		8789C7C92AAA26AD008E3262 /* Motorcycle.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Motorcycle.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8789C7CC2AAA26AD008E3262 /* MotorcycleApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MotorcycleApp.swift; sourceTree = "<group>"; };
 		8789C7CE2AAA26AD008E3262 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		8789C7D02AAA26B0008E3262 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		8789C7D32AAA26B0008E3262 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		8789C7DA2AAA3661008E3262 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		A106A02782E85EEF118A11E0 /* Pods-Motorcycle.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Motorcycle.debug.xcconfig"; path = "Target Support Files/Pods-Motorcycle/Pods-Motorcycle.debug.xcconfig"; sourceTree = "<group>"; };
+		E5F1042EA91F5411CEBAA6ED /* Pods-Motorcycle.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Motorcycle.release.xcconfig"; path = "Target Support Files/Pods-Motorcycle/Pods-Motorcycle.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -26,17 +32,28 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F419673379C5D926DB2A7437 /* Pods_Motorcycle.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1EFE81688184FCECFDDAC705 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				232EFFF9B6DE530CB5532044 /* Pods_Motorcycle.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		8789C7C02AAA26AD008E3262 = {
 			isa = PBXGroup;
 			children = (
 				8789C7CB2AAA26AD008E3262 /* Motorcycle */,
 				8789C7CA2AAA26AD008E3262 /* Products */,
+				FFA34E409F9C5859A7D4959E /* Pods */,
+				1EFE81688184FCECFDDAC705 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -51,6 +68,7 @@
 		8789C7CB2AAA26AD008E3262 /* Motorcycle */ = {
 			isa = PBXGroup;
 			children = (
+				8789C7DA2AAA3661008E3262 /* GoogleService-Info.plist */,
 				8789C7CC2AAA26AD008E3262 /* MotorcycleApp.swift */,
 				8789C7CE2AAA26AD008E3262 /* ContentView.swift */,
 				8789C7D02AAA26B0008E3262 /* Assets.xcassets */,
@@ -67,6 +85,15 @@
 			path = "Preview Content";
 			sourceTree = "<group>";
 		};
+		FFA34E409F9C5859A7D4959E /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				A106A02782E85EEF118A11E0 /* Pods-Motorcycle.debug.xcconfig */,
+				E5F1042EA91F5411CEBAA6ED /* Pods-Motorcycle.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -74,9 +101,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 8789C7D72AAA26B0008E3262 /* Build configuration list for PBXNativeTarget "Motorcycle" */;
 			buildPhases = (
+				DEEB20B0ED7E279B0C4B425B /* [CP] Check Pods Manifest.lock */,
 				8789C7C52AAA26AD008E3262 /* Sources */,
 				8789C7C62AAA26AD008E3262 /* Frameworks */,
 				8789C7C72AAA26AD008E3262 /* Resources */,
+				F6A731400142DE5BF58E35A2 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -96,6 +125,7 @@
 				BuildIndependentTargetsInParallel = 1;
 				LastSwiftUpdateCheck = 1500;
 				LastUpgradeCheck = 1500;
+				ORGANIZATIONNAME = "Azzam Ubaidillah";
 				TargetAttributes = {
 					8789C7C82AAA26AD008E3262 = {
 						CreatedOnToolsVersion = 15.0;
@@ -127,10 +157,53 @@
 			files = (
 				8789C7D42AAA26B0008E3262 /* Preview Assets.xcassets in Resources */,
 				8789C7D12AAA26B0008E3262 /* Assets.xcassets in Resources */,
+				8789C7DB2AAA3662008E3262 /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		DEEB20B0ED7E279B0C4B425B /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Motorcycle-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		F6A731400142DE5BF58E35A2 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Motorcycle/Pods-Motorcycle-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Motorcycle/Pods-Motorcycle-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Motorcycle/Pods-Motorcycle-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		8789C7C52AAA26AD008E3262 /* Sources */ = {
@@ -266,6 +339,7 @@
 		};
 		8789C7D82AAA26B0008E3262 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = A106A02782E85EEF118A11E0 /* Pods-Motorcycle.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -280,6 +354,7 @@
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -295,6 +370,7 @@
 		};
 		8789C7D92AAA26B0008E3262 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = E5F1042EA91F5411CEBAA6ED /* Pods-Motorcycle.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -309,6 +385,7 @@
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
