@@ -8,10 +8,22 @@
 
 /* Begin PBXBuildFile section */
 		8789C7CD2AAA26AD008E3262 /* MotorcycleApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8789C7CC2AAA26AD008E3262 /* MotorcycleApp.swift */; };
-		8789C7CF2AAA26AD008E3262 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8789C7CE2AAA26AD008E3262 /* ContentView.swift */; };
 		8789C7D12AAA26B0008E3262 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8789C7D02AAA26B0008E3262 /* Assets.xcassets */; };
 		8789C7D42AAA26B0008E3262 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8789C7D32AAA26B0008E3262 /* Preview Assets.xcassets */; };
 		8789C7DB2AAA3662008E3262 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 8789C7DA2AAA3661008E3262 /* GoogleService-Info.plist */; };
+		8789C7E32AAA3B97008E3262 /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8789C7E22AAA3B97008E3262 /* LoginViewModel.swift */; };
+		8789C7E52AAA4119008E3262 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8789C7E42AAA4118008E3262 /* LoginView.swift */; };
+		8789C7E82AAA412A008E3262 /* RegisterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8789C7E72AAA412A008E3262 /* RegisterView.swift */; };
+		8789C7EB2AAA4142008E3262 /* RegisterViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8789C7EA2AAA4142008E3262 /* RegisterViewModel.swift */; };
+		8789C7ED2AAA42BA008E3262 /* SessionManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8789C7EC2AAA42BA008E3262 /* SessionManager.swift */; };
+		8789C7F02AAA42EA008E3262 /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8789C7EF2AAA42EA008E3262 /* HomeViewModel.swift */; };
+		8789C7F22AAA42F4008E3262 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8789C7F12AAA42F3008E3262 /* HomeView.swift */; };
+		8789C7F52AAA4EC6008E3262 /* UserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8789C7F42AAA4EC6008E3262 /* UserModel.swift */; };
+		8789C7F82AAA4EF2008E3262 /* AuthenticationRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8789C7F72AAA4EF2008E3262 /* AuthenticationRepository.swift */; };
+		8789C7FB2AAA4F3C008E3262 /* FirebaseAuthenticationRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8789C7FA2AAA4F3C008E3262 /* FirebaseAuthenticationRepository.swift */; };
+		8789C7FD2AAA5084008E3262 /* AuthenticationError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8789C7FC2AAA5084008E3262 /* AuthenticationError.swift */; };
+		8789C8002AAA55DF008E3262 /* UserRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8789C7FF2AAA55DF008E3262 /* UserRepository.swift */; };
+		8789C8022AAA5604008E3262 /* FirebaseUserRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8789C8012AAA5604008E3262 /* FirebaseUserRepository.swift */; };
 		F419673379C5D926DB2A7437 /* Pods_Motorcycle.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 232EFFF9B6DE530CB5532044 /* Pods_Motorcycle.framework */; };
 /* End PBXBuildFile section */
 
@@ -19,10 +31,22 @@
 		232EFFF9B6DE530CB5532044 /* Pods_Motorcycle.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Motorcycle.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		8789C7C92AAA26AD008E3262 /* Motorcycle.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Motorcycle.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8789C7CC2AAA26AD008E3262 /* MotorcycleApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MotorcycleApp.swift; sourceTree = "<group>"; };
-		8789C7CE2AAA26AD008E3262 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		8789C7D02AAA26B0008E3262 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		8789C7D32AAA26B0008E3262 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		8789C7DA2AAA3661008E3262 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		8789C7E22AAA3B97008E3262 /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
+		8789C7E42AAA4118008E3262 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
+		8789C7E72AAA412A008E3262 /* RegisterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterView.swift; sourceTree = "<group>"; };
+		8789C7EA2AAA4142008E3262 /* RegisterViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewModel.swift; sourceTree = "<group>"; };
+		8789C7EC2AAA42BA008E3262 /* SessionManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SessionManager.swift; sourceTree = "<group>"; };
+		8789C7EF2AAA42EA008E3262 /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
+		8789C7F12AAA42F3008E3262 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
+		8789C7F42AAA4EC6008E3262 /* UserModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserModel.swift; sourceTree = "<group>"; };
+		8789C7F72AAA4EF2008E3262 /* AuthenticationRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticationRepository.swift; sourceTree = "<group>"; };
+		8789C7FA2AAA4F3C008E3262 /* FirebaseAuthenticationRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseAuthenticationRepository.swift; sourceTree = "<group>"; };
+		8789C7FC2AAA5084008E3262 /* AuthenticationError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticationError.swift; sourceTree = "<group>"; };
+		8789C7FF2AAA55DF008E3262 /* UserRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserRepository.swift; sourceTree = "<group>"; };
+		8789C8012AAA5604008E3262 /* FirebaseUserRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseUserRepository.swift; sourceTree = "<group>"; };
 		A106A02782E85EEF118A11E0 /* Pods-Motorcycle.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Motorcycle.debug.xcconfig"; path = "Target Support Files/Pods-Motorcycle/Pods-Motorcycle.debug.xcconfig"; sourceTree = "<group>"; };
 		E5F1042EA91F5411CEBAA6ED /* Pods-Motorcycle.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Motorcycle.release.xcconfig"; path = "Target Support Files/Pods-Motorcycle/Pods-Motorcycle.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -69,10 +93,13 @@
 			isa = PBXGroup;
 			children = (
 				8789C7DA2AAA3661008E3262 /* GoogleService-Info.plist */,
-				8789C7CC2AAA26AD008E3262 /* MotorcycleApp.swift */,
-				8789C7CE2AAA26AD008E3262 /* ContentView.swift */,
 				8789C7D02AAA26B0008E3262 /* Assets.xcassets */,
+				8789C7E02AAA3AB8008E3262 /* Common */,
+				8789C7DE2AAA3AA6008E3262 /* Data */,
+				8789C7DD2AAA3AA0008E3262 /* Domain */,
+				8789C7FE2AAA50E7008E3262 /* Enums */,
 				8789C7D22AAA26B0008E3262 /* Preview Content */,
+				8789C7DF2AAA3AAB008E3262 /* UI */,
 			);
 			path = Motorcycle;
 			sourceTree = "<group>";
@@ -83,6 +110,103 @@
 				8789C7D32AAA26B0008E3262 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		8789C7DD2AAA3AA0008E3262 /* Domain */ = {
+			isa = PBXGroup;
+			children = (
+				8789C7F62AAA4EE0008E3262 /* Repository */,
+				8789C7F32AAA4EBB008E3262 /* Model */,
+			);
+			path = Domain;
+			sourceTree = "<group>";
+		};
+		8789C7DE2AAA3AA6008E3262 /* Data */ = {
+			isa = PBXGroup;
+			children = (
+				8789C7F92AAA4F24008E3262 /* Repository */,
+			);
+			path = Data;
+			sourceTree = "<group>";
+		};
+		8789C7DF2AAA3AAB008E3262 /* UI */ = {
+			isa = PBXGroup;
+			children = (
+				8789C7EE2AAA42E0008E3262 /* Home */,
+				8789C7E62AAA411D008E3262 /* Register */,
+				8789C7E12AAA3B7A008E3262 /* Login */,
+			);
+			path = UI;
+			sourceTree = "<group>";
+		};
+		8789C7E02AAA3AB8008E3262 /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				8789C7CC2AAA26AD008E3262 /* MotorcycleApp.swift */,
+				8789C7EC2AAA42BA008E3262 /* SessionManager.swift */,
+			);
+			path = Common;
+			sourceTree = "<group>";
+		};
+		8789C7E12AAA3B7A008E3262 /* Login */ = {
+			isa = PBXGroup;
+			children = (
+				8789C7E22AAA3B97008E3262 /* LoginViewModel.swift */,
+				8789C7E42AAA4118008E3262 /* LoginView.swift */,
+			);
+			path = Login;
+			sourceTree = "<group>";
+		};
+		8789C7E62AAA411D008E3262 /* Register */ = {
+			isa = PBXGroup;
+			children = (
+				8789C7E72AAA412A008E3262 /* RegisterView.swift */,
+				8789C7EA2AAA4142008E3262 /* RegisterViewModel.swift */,
+			);
+			path = Register;
+			sourceTree = "<group>";
+		};
+		8789C7EE2AAA42E0008E3262 /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				8789C7EF2AAA42EA008E3262 /* HomeViewModel.swift */,
+				8789C7F12AAA42F3008E3262 /* HomeView.swift */,
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
+		8789C7F32AAA4EBB008E3262 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				8789C7F42AAA4EC6008E3262 /* UserModel.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		8789C7F62AAA4EE0008E3262 /* Repository */ = {
+			isa = PBXGroup;
+			children = (
+				8789C7F72AAA4EF2008E3262 /* AuthenticationRepository.swift */,
+				8789C7FF2AAA55DF008E3262 /* UserRepository.swift */,
+			);
+			path = Repository;
+			sourceTree = "<group>";
+		};
+		8789C7F92AAA4F24008E3262 /* Repository */ = {
+			isa = PBXGroup;
+			children = (
+				8789C7FA2AAA4F3C008E3262 /* FirebaseAuthenticationRepository.swift */,
+				8789C8012AAA5604008E3262 /* FirebaseUserRepository.swift */,
+			);
+			path = Repository;
+			sourceTree = "<group>";
+		};
+		8789C7FE2AAA50E7008E3262 /* Enums */ = {
+			isa = PBXGroup;
+			children = (
+				8789C7FC2AAA5084008E3262 /* AuthenticationError.swift */,
+			);
+			path = Enums;
 			sourceTree = "<group>";
 		};
 		FFA34E409F9C5859A7D4959E /* Pods */ = {
@@ -210,8 +334,20 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8789C7CF2AAA26AD008E3262 /* ContentView.swift in Sources */,
+				8789C8002AAA55DF008E3262 /* UserRepository.swift in Sources */,
+				8789C7E82AAA412A008E3262 /* RegisterView.swift in Sources */,
 				8789C7CD2AAA26AD008E3262 /* MotorcycleApp.swift in Sources */,
+				8789C7F02AAA42EA008E3262 /* HomeViewModel.swift in Sources */,
+				8789C7F82AAA4EF2008E3262 /* AuthenticationRepository.swift in Sources */,
+				8789C8022AAA5604008E3262 /* FirebaseUserRepository.swift in Sources */,
+				8789C7ED2AAA42BA008E3262 /* SessionManager.swift in Sources */,
+				8789C7EB2AAA4142008E3262 /* RegisterViewModel.swift in Sources */,
+				8789C7F22AAA42F4008E3262 /* HomeView.swift in Sources */,
+				8789C7E52AAA4119008E3262 /* LoginView.swift in Sources */,
+				8789C7FB2AAA4F3C008E3262 /* FirebaseAuthenticationRepository.swift in Sources */,
+				8789C7F52AAA4EC6008E3262 /* UserModel.swift in Sources */,
+				8789C7FD2AAA5084008E3262 /* AuthenticationError.swift in Sources */,
+				8789C7E32AAA3B97008E3262 /* LoginViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -348,6 +484,7 @@
 				DEVELOPMENT_ASSET_PATHS = "\"Motorcycle/Preview Content\"";
 				DEVELOPMENT_TEAM = 6X6Q46SLSA;
 				ENABLE_PREVIEWS = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -379,6 +516,7 @@
 				DEVELOPMENT_ASSET_PATHS = "\"Motorcycle/Preview Content\"";
 				DEVELOPMENT_TEAM = 6X6Q46SLSA;
 				ENABLE_PREVIEWS = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
