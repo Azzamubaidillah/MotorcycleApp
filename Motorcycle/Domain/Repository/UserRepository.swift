@@ -6,9 +6,10 @@
 //  Copyright © 2023 Azzam Ubaidillah. All rights reserved.
 //
 
+import Foundation
 import Combine
 
 protocol UserRepository {
-    func getCurrentUser() -> AnyPublisher<User?, Error>
-    // Add other user-related methods here
+    func fetchUser() -> AnyPublisher<User, Error>
+    func updateUser(firstName: String, lastName: String) -> AnyPublisher<Void, Error>
 }

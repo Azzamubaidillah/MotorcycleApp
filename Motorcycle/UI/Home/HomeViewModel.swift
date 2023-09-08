@@ -23,7 +23,7 @@ class HomeViewModel: ObservableObject {
     }
 
     func fetchCurrentUser() {
-        userRepository.getCurrentUser()
+        userRepository.fetchUser()
             .sink { [weak self] completion in
                 if case let .failure(error) = completion {
                     // Handle error if needed

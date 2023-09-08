@@ -6,8 +6,8 @@
 //  Copyright © 2023 Azzam Ubaidillah. All rights reserved.
 //
 
-import Resolver
 import SwiftUI
+import Resolver
 
 struct HomeView: View {
     @ObservedObject var viewModel: HomeViewModel
@@ -15,26 +15,17 @@ struct HomeView: View {
     var body: some View {
         NavigationView {
             VStack {
-                if let user = viewModel.user {
-                    Text("Welcome, \(user.firstName) \(user.lastName)")
-                        .font(.title)
+                Text("Welcome to the Home View!")
+                    .font(.title)
+
+                NavigationLink(destination: ProfileView(viewModel: Resolver.resolve(ProfileViewModel.self))) {
+                    Text("Go to Profile")
                         .padding()
-
-                } else {
-                    ProgressView("Loading...")
+                        .background(Color.blue)
+                        .foregroundColor(.white)
+                        .cornerRadius(8)
                 }
-
-                Button("Logout") {
-                    viewModel.logout()
-                }
-                .padding()
-                .background(Color.red)
-                .foregroundColor(.white)
-                .cornerRadius(8)
-
-                Spacer()
             }
-            .padding()
             .navigationTitle("Home")
         }
     }
@@ -42,8 +33,6 @@ struct HomeView: View {
 
 struct HomeView_Previews: PreviewProvider {
     static var previews: some View {
-        // Initialize your HomeViewModel here if needed
-        let viewModel = HomeViewModel()
-        return HomeView(viewModel: viewModel)
+        ProfileView(viewModel: Resolver.resolve(ProfileViewModel.self))
     }
 }

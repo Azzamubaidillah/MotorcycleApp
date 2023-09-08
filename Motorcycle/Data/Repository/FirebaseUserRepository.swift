@@ -6,46 +6,80 @@
 //  Copyright © 2023 Azzam Ubaidillah. All rights reserved.
 //
 
+import Foundation
 import Combine
-import FirebaseAuth
 import FirebaseFirestore
+import FirebaseFirestoreSwift
+import FirebaseAuth
 
 class FirebaseUserRepository: UserRepository {
-    func getCurrentUser() -> AnyPublisher<User?, Error> {
-        guard let currentUser = Auth.auth().currentUser else {
-            // No user is currently authenticated
-            return Just(nil)
-                .setFailureType(to: Error.self)
+    private let db = Firestore.firestore()
+
+    // MARK: - Fetch User
+
+    func fetchUser() -> AnyPublisher<User, Error> {
+        guard let userId = Auth.auth().currentUser?.uid else {
+            // Return an error if there's no authenticated user
+            return Fail<User, Error>(error: FirebaseUserRepositoryError.userNotAuthenticated)
                 .eraseToAnyPublisher()
         }
 
-        // Create a Firestore reference to the user's document
-        let db = Firestore.firestore()
-        let userRef = db.collection("users").document(currentUser.uid)
+        return Future<User, Error> { promise in
+            let userRef = self.db.collection("users").document(userId)
 
-        // Fetch the user's document from Firestore
-        return Future { promise in
-            userRef.getDocument { document, error in
+            userRef.getDocument { (document, error) in
                 if let error = error {
-                    // Handle the Firestore fetch error
                     promise(.failure(error))
                 } else if let document = document, document.exists {
-                    // Parse and use the user data here
-                    let userData = document.data()
-                    let email = currentUser.email ?? ""
-                    let firstName = userData?["firstName"] as? String ?? ""
-                    let lastName = userData?["lastName"] as? String ?? ""
+                    do {
+                        // Create a Firestore.Decoder instance
+                        let firestoreDecoder = Firestore.Decoder()
 
-                    let user = User(uid: currentUser.uid, email: email, firstName: firstName, lastName: lastName)
+                        // Decode the user data from Firestore document using the Firestore.Decoder
+                        let user = try firestoreDecoder.decode(User.self, from: document.data() ?? [:])
 
-                    promise(.success(user))
+                        promise(.success(user))
+                    } catch {
+                        promise(.failure(error))
+                    }
                 } else {
-                    // Handle the case where the document doesn't exist
-                    promise(.success(nil))
+                    // No user document found
+                    promise(.failure(FirebaseUserRepositoryError.userNotFound))
                 }
             }
         }
         .eraseToAnyPublisher()
     }
-    // Implement other user-related methods as needed
+
+
+    // MARK: - Update User
+
+    func updateUser(firstName: String, lastName: String) -> AnyPublisher<Void, Error> {
+        guard let userId = Auth.auth().currentUser?.uid else {
+            // Return an error if there's no authenticated user
+            return Fail<Void, Error>(error: FirebaseUserRepositoryError.userNotAuthenticated)
+                .eraseToAnyPublisher()
+        }
+
+        return Future<Void, Error> { promise in
+            let userRef = self.db.collection("users").document(userId)
+
+            // Create a dictionary with updated user data
+            let userData: [String: Any] = [
+                "firstName": firstName,
+                "lastName": lastName
+            ]
+
+            // Update the user data in Firestore
+            userRef.updateData(userData) { error in
+                if let error = error {
+                    promise(.failure(error))
+                } else {
+                    promise(.success(()))
+                }
+            }
+        }
+        .eraseToAnyPublisher()
+    }
 }
+

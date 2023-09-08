@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		34950643488F8554E4CF8B21 /* Pods_Motorcycle.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8612BDB6E93E817FC0A38E67 /* Pods_Motorcycle.framework */; };
 		8789C7CD2AAA26AD008E3262 /* MotorcycleApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8789C7CC2AAA26AD008E3262 /* MotorcycleApp.swift */; };
 		8789C7D12AAA26B0008E3262 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8789C7D02AAA26B0008E3262 /* Assets.xcassets */; };
 		8789C7D42AAA26B0008E3262 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8789C7D32AAA26B0008E3262 /* Preview Assets.xcassets */; };
@@ -24,11 +25,18 @@
 		8789C7FD2AAA5084008E3262 /* AuthenticationError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8789C7FC2AAA5084008E3262 /* AuthenticationError.swift */; };
 		8789C8002AAA55DF008E3262 /* UserRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8789C7FF2AAA55DF008E3262 /* UserRepository.swift */; };
 		8789C8022AAA5604008E3262 /* FirebaseUserRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8789C8012AAA5604008E3262 /* FirebaseUserRepository.swift */; };
-		F419673379C5D926DB2A7437 /* Pods_Motorcycle.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 232EFFF9B6DE530CB5532044 /* Pods_Motorcycle.framework */; };
+		8789C8052AAB4AE2008E3262 /* ProfileViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8789C8042AAB4AE2008E3262 /* ProfileViewModel.swift */; };
+		8789C8072AAB4AEA008E3262 /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8789C8062AAB4AEA008E3262 /* ProfileView.swift */; };
+		8789C8092AAB4BA0008E3262 /* ProfilePhotoRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8789C8082AAB4BA0008E3262 /* ProfilePhotoRepository.swift */; };
+		8789C80B2AAB4C25008E3262 /* FirebaseProfilePhotoRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8789C80A2AAB4C25008E3262 /* FirebaseProfilePhotoRepository.swift */; };
+		8789C80E2AAB4F8C008E3262 /* Imagepicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8789C80D2AAB4F8C008E3262 /* Imagepicker.swift */; };
+		8789C8102AAB51C6008E3262 /* UserError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8789C80F2AAB51C6008E3262 /* UserError.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		232EFFF9B6DE530CB5532044 /* Pods_Motorcycle.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Motorcycle.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		12ED83D4DDAF06623EF9BB81 /* Pods-Motorcycle.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Motorcycle.debug.xcconfig"; path = "Target Support Files/Pods-Motorcycle/Pods-Motorcycle.debug.xcconfig"; sourceTree = "<group>"; };
+		2F88AF2B2C7D0508C2FB3287 /* Pods-Motorcycle.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Motorcycle.release.xcconfig"; path = "Target Support Files/Pods-Motorcycle/Pods-Motorcycle.release.xcconfig"; sourceTree = "<group>"; };
+		8612BDB6E93E817FC0A38E67 /* Pods_Motorcycle.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Motorcycle.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		8789C7C92AAA26AD008E3262 /* Motorcycle.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Motorcycle.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8789C7CC2AAA26AD008E3262 /* MotorcycleApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MotorcycleApp.swift; sourceTree = "<group>"; };
 		8789C7D02AAA26B0008E3262 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -47,8 +55,12 @@
 		8789C7FC2AAA5084008E3262 /* AuthenticationError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticationError.swift; sourceTree = "<group>"; };
 		8789C7FF2AAA55DF008E3262 /* UserRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserRepository.swift; sourceTree = "<group>"; };
 		8789C8012AAA5604008E3262 /* FirebaseUserRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseUserRepository.swift; sourceTree = "<group>"; };
-		A106A02782E85EEF118A11E0 /* Pods-Motorcycle.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Motorcycle.debug.xcconfig"; path = "Target Support Files/Pods-Motorcycle/Pods-Motorcycle.debug.xcconfig"; sourceTree = "<group>"; };
-		E5F1042EA91F5411CEBAA6ED /* Pods-Motorcycle.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Motorcycle.release.xcconfig"; path = "Target Support Files/Pods-Motorcycle/Pods-Motorcycle.release.xcconfig"; sourceTree = "<group>"; };
+		8789C8042AAB4AE2008E3262 /* ProfileViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewModel.swift; sourceTree = "<group>"; };
+		8789C8062AAB4AEA008E3262 /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
+		8789C8082AAB4BA0008E3262 /* ProfilePhotoRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfilePhotoRepository.swift; sourceTree = "<group>"; };
+		8789C80A2AAB4C25008E3262 /* FirebaseProfilePhotoRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseProfilePhotoRepository.swift; sourceTree = "<group>"; };
+		8789C80D2AAB4F8C008E3262 /* Imagepicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Imagepicker.swift; sourceTree = "<group>"; };
+		8789C80F2AAB51C6008E3262 /* UserError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserError.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,28 +68,20 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F419673379C5D926DB2A7437 /* Pods_Motorcycle.framework in Frameworks */,
+				34950643488F8554E4CF8B21 /* Pods_Motorcycle.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		1EFE81688184FCECFDDAC705 /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-				232EFFF9B6DE530CB5532044 /* Pods_Motorcycle.framework */,
-			);
-			name = Frameworks;
-			sourceTree = "<group>";
-		};
 		8789C7C02AAA26AD008E3262 = {
 			isa = PBXGroup;
 			children = (
 				8789C7CB2AAA26AD008E3262 /* Motorcycle */,
 				8789C7CA2AAA26AD008E3262 /* Products */,
 				FFA34E409F9C5859A7D4959E /* Pods */,
-				1EFE81688184FCECFDDAC705 /* Frameworks */,
+				FBC85352FD661608A9DD15A0 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -98,8 +102,8 @@
 				8789C7DE2AAA3AA6008E3262 /* Data */,
 				8789C7DD2AAA3AA0008E3262 /* Domain */,
 				8789C7FE2AAA50E7008E3262 /* Enums */,
-				8789C7D22AAA26B0008E3262 /* Preview Content */,
 				8789C7DF2AAA3AAB008E3262 /* UI */,
+				8789C7D22AAA26B0008E3262 /* Preview Content */,
 			);
 			path = Motorcycle;
 			sourceTree = "<group>";
@@ -132,6 +136,8 @@
 		8789C7DF2AAA3AAB008E3262 /* UI */ = {
 			isa = PBXGroup;
 			children = (
+				8789C80C2AAB4F81008E3262 /* Components */,
+				8789C8032AAB4AC9008E3262 /* Profile */,
 				8789C7EE2AAA42E0008E3262 /* Home */,
 				8789C7E62AAA411D008E3262 /* Register */,
 				8789C7E12AAA3B7A008E3262 /* Login */,
@@ -188,6 +194,7 @@
 			children = (
 				8789C7F72AAA4EF2008E3262 /* AuthenticationRepository.swift */,
 				8789C7FF2AAA55DF008E3262 /* UserRepository.swift */,
+				8789C8082AAB4BA0008E3262 /* ProfilePhotoRepository.swift */,
 			);
 			path = Repository;
 			sourceTree = "<group>";
@@ -197,6 +204,7 @@
 			children = (
 				8789C7FA2AAA4F3C008E3262 /* FirebaseAuthenticationRepository.swift */,
 				8789C8012AAA5604008E3262 /* FirebaseUserRepository.swift */,
+				8789C80A2AAB4C25008E3262 /* FirebaseProfilePhotoRepository.swift */,
 			);
 			path = Repository;
 			sourceTree = "<group>";
@@ -205,15 +213,41 @@
 			isa = PBXGroup;
 			children = (
 				8789C7FC2AAA5084008E3262 /* AuthenticationError.swift */,
+				8789C80F2AAB51C6008E3262 /* UserError.swift */,
 			);
 			path = Enums;
+			sourceTree = "<group>";
+		};
+		8789C8032AAB4AC9008E3262 /* Profile */ = {
+			isa = PBXGroup;
+			children = (
+				8789C8042AAB4AE2008E3262 /* ProfileViewModel.swift */,
+				8789C8062AAB4AEA008E3262 /* ProfileView.swift */,
+			);
+			path = Profile;
+			sourceTree = "<group>";
+		};
+		8789C80C2AAB4F81008E3262 /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				8789C80D2AAB4F8C008E3262 /* Imagepicker.swift */,
+			);
+			path = Components;
+			sourceTree = "<group>";
+		};
+		FBC85352FD661608A9DD15A0 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				8612BDB6E93E817FC0A38E67 /* Pods_Motorcycle.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 		FFA34E409F9C5859A7D4959E /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				A106A02782E85EEF118A11E0 /* Pods-Motorcycle.debug.xcconfig */,
-				E5F1042EA91F5411CEBAA6ED /* Pods-Motorcycle.release.xcconfig */,
+				12ED83D4DDAF06623EF9BB81 /* Pods-Motorcycle.debug.xcconfig */,
+				2F88AF2B2C7D0508C2FB3287 /* Pods-Motorcycle.release.xcconfig */,
 			);
 			path = Pods;
 			sourceTree = "<group>";
@@ -225,11 +259,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 8789C7D72AAA26B0008E3262 /* Build configuration list for PBXNativeTarget "Motorcycle" */;
 			buildPhases = (
-				DEEB20B0ED7E279B0C4B425B /* [CP] Check Pods Manifest.lock */,
+				B780907BB8A711600BE67EEF /* [CP] Check Pods Manifest.lock */,
 				8789C7C52AAA26AD008E3262 /* Sources */,
 				8789C7C62AAA26AD008E3262 /* Frameworks */,
 				8789C7C72AAA26AD008E3262 /* Resources */,
-				F6A731400142DE5BF58E35A2 /* [CP] Embed Pods Frameworks */,
+				352BA158962FA23B130CB597 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -288,7 +322,24 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		DEEB20B0ED7E279B0C4B425B /* [CP] Check Pods Manifest.lock */ = {
+		352BA158962FA23B130CB597 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Motorcycle/Pods-Motorcycle-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Motorcycle/Pods-Motorcycle-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Motorcycle/Pods-Motorcycle-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		B780907BB8A711600BE67EEF /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -310,23 +361,6 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
-		F6A731400142DE5BF58E35A2 /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-Motorcycle/Pods-Motorcycle-frameworks-${CONFIGURATION}-input-files.xcfilelist",
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-Motorcycle/Pods-Motorcycle-frameworks-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Motorcycle/Pods-Motorcycle-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -337,17 +371,23 @@
 				8789C8002AAA55DF008E3262 /* UserRepository.swift in Sources */,
 				8789C7E82AAA412A008E3262 /* RegisterView.swift in Sources */,
 				8789C7CD2AAA26AD008E3262 /* MotorcycleApp.swift in Sources */,
+				8789C8102AAB51C6008E3262 /* UserError.swift in Sources */,
+				8789C80B2AAB4C25008E3262 /* FirebaseProfilePhotoRepository.swift in Sources */,
 				8789C7F02AAA42EA008E3262 /* HomeViewModel.swift in Sources */,
 				8789C7F82AAA4EF2008E3262 /* AuthenticationRepository.swift in Sources */,
 				8789C8022AAA5604008E3262 /* FirebaseUserRepository.swift in Sources */,
 				8789C7ED2AAA42BA008E3262 /* SessionManager.swift in Sources */,
 				8789C7EB2AAA4142008E3262 /* RegisterViewModel.swift in Sources */,
+				8789C8072AAB4AEA008E3262 /* ProfileView.swift in Sources */,
 				8789C7F22AAA42F4008E3262 /* HomeView.swift in Sources */,
+				8789C8052AAB4AE2008E3262 /* ProfileViewModel.swift in Sources */,
 				8789C7E52AAA4119008E3262 /* LoginView.swift in Sources */,
+				8789C8092AAB4BA0008E3262 /* ProfilePhotoRepository.swift in Sources */,
 				8789C7FB2AAA4F3C008E3262 /* FirebaseAuthenticationRepository.swift in Sources */,
 				8789C7F52AAA4EC6008E3262 /* UserModel.swift in Sources */,
 				8789C7FD2AAA5084008E3262 /* AuthenticationError.swift in Sources */,
 				8789C7E32AAA3B97008E3262 /* LoginViewModel.swift in Sources */,
+				8789C80E2AAB4F8C008E3262 /* Imagepicker.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -475,7 +515,7 @@
 		};
 		8789C7D82AAA26B0008E3262 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = A106A02782E85EEF118A11E0 /* Pods-Motorcycle.debug.xcconfig */;
+			baseConfigurationReference = 12ED83D4DDAF06623EF9BB81 /* Pods-Motorcycle.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -491,7 +531,7 @@
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -507,7 +547,7 @@
 		};
 		8789C7D92AAA26B0008E3262 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = E5F1042EA91F5411CEBAA6ED /* Pods-Motorcycle.release.xcconfig */;
+			baseConfigurationReference = 2F88AF2B2C7D0508C2FB3287 /* Pods-Motorcycle.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -523,7 +563,7 @@
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

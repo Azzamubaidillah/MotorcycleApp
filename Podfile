@@ -9,8 +9,10 @@ target 'Motorcycle' do
   pod 'FirebaseCore'
   pod 'FirebaseAuth'
   pod 'FirebaseFirestore'
+  pod 'FirebaseFirestoreSwift'
+  pod 'FirebaseStorage'
   pod 'Alamofire'
-  pod 'Resolver' 
+  pod 'Resolver'
 
 end
 

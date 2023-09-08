@@ -18,8 +18,8 @@ class FirebaseAuthenticationRepository: AuthenticationRepository {
                     promise(.failure(error))
                 } else if let user = authResult?.user {
                     // User registration successful
-                    let newUser = User(uid: user.uid, email: email, firstName: firstName, lastName: lastName)
-                    self.createUserDocument(uid: newUser.uid, email: newUser.email, firstName: newUser.firstName, lastName: newUser.lastName)
+                    let newUser = User(uid: user.uid, email: email, firstName: firstName, lastName: lastName, profilePhotoURL: "")
+                    self.createUserDocument(uid: newUser.uid!, email: newUser.email, firstName: newUser.firstName, lastName: newUser.lastName)
                     promise(.success(newUser))
                 } else {
                     promise(.failure(AuthenticationError.unknown))
@@ -37,7 +37,7 @@ class FirebaseAuthenticationRepository: AuthenticationRepository {
                 } else if let user = authResult?.user {
                     // User login successful
                     let userEmail = user.email ?? ""
-                    let newUser = User(uid: user.uid, email: userEmail, firstName: "", lastName: "")
+                    let newUser = User(uid: user.uid, email: userEmail, firstName: "", lastName: "", profilePhotoURL: "")
                     promise(.success(newUser))
                 } else {
                     promise(.failure(AuthenticationError.unknown))
