@@ -17,14 +17,16 @@ class FirebaseUserRepository: UserRepository {
 
     // MARK: - Fetch User
 
-    func fetchUser() -> AnyPublisher<User, Error> {
+    func fetchUser() -> AnyPublisher<User?, Error> {
         guard let userId = Auth.auth().currentUser?.uid else {
+            
             // Return an error if there's no authenticated user
-            return Fail<User, Error>(error: FirebaseUserRepositoryError.userNotAuthenticated)
+            return Fail<User?, Error>(error: FirebaseUserRepositoryError.userNotAuthenticated)
                 .eraseToAnyPublisher()
         }
 
-        return Future<User, Error> { promise in
+        return Future<User?, Error> { promise in
+            print("user Id" + userId)
             let userRef = self.db.collection("users").document(userId)
 
             userRef.getDocument { (document, error) in
@@ -36,7 +38,8 @@ class FirebaseUserRepository: UserRepository {
                         let firestoreDecoder = Firestore.Decoder()
 
                         // Decode the user data from Firestore document using the Firestore.Decoder
-                        let user = try firestoreDecoder.decode(User.self, from: document.data() ?? [:])
+                        let user = try document.data(as: User.self, decoder: firestoreDecoder)
+
 
                         promise(.success(user))
                     } catch {
@@ -44,13 +47,12 @@ class FirebaseUserRepository: UserRepository {
                     }
                 } else {
                     // No user document found
-                    promise(.failure(FirebaseUserRepositoryError.userNotFound))
+                    promise(.success(nil)) // Return nil user when document doesn't exist
                 }
             }
         }
         .eraseToAnyPublisher()
     }
-
 
     // MARK: - Update User
 

@@ -14,12 +14,17 @@ class ProfileViewModel: ObservableObject {
     @Published var email: String = ""
     @Published var firstName: String = ""
     @Published var lastName: String = ""
+    @Published var profilePhotoURL: String = ""
     @Published var profilePhoto: UIImage?
 
     @Injected var userRepository: UserRepository
     @Injected var profilePhotoRepository: ProfilePhotoRepository
 
     private var cancellables: Set<AnyCancellable> = []
+
+    init() {
+        fetchUserProfile()
+    }
 
     func fetchUserProfile() {
         userRepository.fetchUser()
@@ -34,9 +39,11 @@ class ProfileViewModel: ObservableObject {
                 }
             }, receiveValue: { user in
                 // Update the UI with the fetched user data
-                self.firstName = user.firstName
-                self.lastName = user.lastName
-                self.email = user.email
+                self.firstName = user?.firstName ?? "default"
+                self.lastName = user?.lastName ?? "default"
+                self.email = user?.email ?? "default"
+                self.profilePhotoURL = user?.profilePhotoURL ?? "default"
+                
                 // Load the profile photo, you can implement this separately
             })
             .store(in: &cancellables)
@@ -74,8 +81,23 @@ class ProfileViewModel: ObservableObject {
                     // Handle the upload profile photo error
                     print("Error uploading profile photo: \(error.localizedDescription)")
                 }
-            }, receiveValue: { _ in
-                // Profile photo uploaded successfully, you can update the user's profile photo URL in Firestore here
+            }, receiveValue: { imageURL in
+                // Profile photo uploaded successfully
+                // Now, update the user's profile photo URL in Firestore
+                self.profilePhotoRepository.updateProfilePhotoURL(imageURL)
+                    .sink(receiveCompletion: { completion in
+                        switch completion {
+                        case .finished:
+                            break
+                        case let .failure(error):
+                            // Handle the update profile photo URL error
+                            print("Error updating profile photo URL: \(error.localizedDescription)")
+                        }
+                    }, receiveValue: { _ in
+                        // Profile photo URL updated successfully
+                        // You can perform any additional actions here if needed
+                    })
+                    .store(in: &self.cancellables)
             })
             .store(in: &cancellables)
     }

@@ -52,6 +52,7 @@ class FirebaseAuthenticationRepository: AuthenticationRepository {
         let userRef = db.collection("users").document(uid)
 
         userRef.setData([
+            "uid": uid,
             "email": email,
             "firstName": firstName,
             "lastName": lastName,

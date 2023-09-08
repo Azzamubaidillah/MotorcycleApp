@@ -22,10 +22,19 @@ struct ProfileView: View {
                         .frame(width: 100, height: 100)
                         .clipShape(Circle())
                 } else {
-                    Image(systemName: "person.circle.fill")
-                        .resizable()
-                        .aspectRatio(contentMode: .fit)
-                        .frame(width: 100, height: 100)
+                    // Use the profilePhotoURL directly (no need for optional binding)
+                    AsyncImage(url: URL(string: viewModel.profilePhotoURL)) { image in
+                        image
+                            .resizable()
+                            .aspectRatio(contentMode: .fill)
+                            .frame(width: 100, height: 100)
+                            .clipShape(Circle())
+                    } placeholder: {
+                        Image(systemName: "person.circle.fill")
+                            .resizable()
+                            .aspectRatio(contentMode: .fit)
+                            .frame(width: 100, height: 100)
+                    }
                 }
 
                 Text("Email: \(viewModel.email)")
@@ -61,7 +70,6 @@ struct ProfileView: View {
         }
     }
 }
-
 
 struct ProfileView_Previews: PreviewProvider {
     static var previews: some View {

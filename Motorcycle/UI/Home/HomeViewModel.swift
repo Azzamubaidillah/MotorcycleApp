@@ -10,7 +10,9 @@ import Combine
 import Resolver
 
 class HomeViewModel: ObservableObject {
-    @Published var user: User?
+    @Published var email: String = ""
+    @Published var firstName: String = ""
+    @Published var lastName: String = ""
 
     // Inject the AuthenticationRepository
     @Injected private var authRepository: AuthenticationRepository
@@ -19,19 +21,28 @@ class HomeViewModel: ObservableObject {
     private var cancellables = Set<AnyCancellable>()
 
     init() {
-        fetchCurrentUser()
+        fetchUserProfile()
     }
 
-    func fetchCurrentUser() {
+    func fetchUserProfile() {
         userRepository.fetchUser()
-            .sink { [weak self] completion in
-                if case let .failure(error) = completion {
-                    // Handle error if needed
-                    print("Error getting current user: \(error.localizedDescription)")
+            .receive(on: DispatchQueue.main)
+            .sink(receiveCompletion: { completion in
+                switch completion {
+                case .finished:
+                    break
+                case let .failure(error):
+                    // Handle the fetch user error
+                    print("Error fetching user: \(error.localizedDescription)")
                 }
-            } receiveValue: { [weak self] user in
-                self?.user = user
-            }
+            }, receiveValue: { user in
+                // Update the UI with the fetched user data
+                self.firstName = user?.firstName ?? "default"
+                self.lastName = user?.lastName ?? "default"
+                self.email = user?.email ?? "default"
+                // Load the profile photo, you can implement this separately
+            })
             .store(in: &cancellables)
     }
+
 }

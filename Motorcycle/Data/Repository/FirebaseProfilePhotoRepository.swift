@@ -6,11 +6,16 @@
 //  Copyright © 2023 Azzam Ubaidillah. All rights reserved.
 //
 
-import FirebaseStorage
 import Combine
+import FirebaseAuth
+import FirebaseFirestore
+import FirebaseFirestoreSwift
+import FirebaseStorage
 
 class FirebaseProfilePhotoRepository: ProfilePhotoRepository {
+    
     private let storage = Storage.storage()
+    private let db = Firestore.firestore()
 
     // Upload a profile photo to Firebase Storage
     func uploadProfilePhoto(_ image: UIImage) -> AnyPublisher<URL, Error> {
@@ -26,12 +31,12 @@ class FirebaseProfilePhotoRepository: ProfilePhotoRepository {
                 let metadata = StorageMetadata()
                 metadata.contentType = "image/jpeg"
 
-                _ = storageRef.putData(imageData, metadata: metadata) { (_, error) in
+                _ = storageRef.putData(imageData, metadata: metadata) { _, error in
                     if let error = error {
                         promise(.failure(error))
                     } else {
                         // Successfully uploaded the profile photo
-                        storageRef.downloadURL { (url, error) in
+                        storageRef.downloadURL { url, error in
                             if let error = error {
                                 promise(.failure(error))
                             } else if let downloadURL = url {
@@ -49,24 +54,42 @@ class FirebaseProfilePhotoRepository: ProfilePhotoRepository {
     }
 
     // Delete the user's profile photo from Firebase Storage
-    func deleteProfilePhoto() -> AnyPublisher<Void, Error> {
-        // Implement deletion logic here
-        // You need to know the storage reference or URL of the user's current profile photo in order to delete it
+    func deleteProfilePhoto(_ imageURL: URL) -> AnyPublisher<Void, Error> {
+        // Create a storage reference for the image URL
+        let storageRef = storage.reference(forURL: imageURL.absoluteString)
 
-        // For example, if you have a URL to the current profile photo, you can use it to delete the photo:
-        // let storageRef = storage.reference(forURL: imageURL)
+        return Future<Void, Error> { promise in
+            // Delete the photo and handle success or failure
+            storageRef.delete { error in
+                if let error = error {
+                    promise(.failure(error))
+                } else {
+                    promise(.success(()))
+                }
+            }
+        }
+        .eraseToAnyPublisher()
+    }
 
-        // Delete the photo and handle success or failure
-        // storageRef.delete { error in
-        //     if let error = error {
-        //         promise(.failure(error))
-        //     } else {
-        //         promise(.success(()))
-        //     }
-        // }
-        
-        // Placeholder for the delete logic
-        return Empty<Void, Error>().eraseToAnyPublisher()
+    func updateProfilePhotoURL(_ photoURL: URL) -> AnyPublisher<Void, Error> {
+        guard let userId = Auth.auth().currentUser?.uid else {
+            // Return an error if there's no authenticated user
+            return Fail<Void, Error>(error: FirebaseUserRepositoryError.userNotAuthenticated)
+                .eraseToAnyPublisher()
+        }
+
+        let userRef = db.collection("users").document(userId)
+
+        return Future<Void, Error> { promise in
+            userRef.updateData(["profilePhotoURL": photoURL.absoluteString]) { error in
+                if let error = error {
+                    promise(.failure(error))
+                } else {
+                    promise(.success(()))
+                }
+            }
+        }
+        .eraseToAnyPublisher()
     }
 }
 

@@ -28,6 +28,9 @@ struct HomeView: View {
             }
             .navigationTitle("Home")
         }
+        .onAppear() {
+            print(viewModel.firstName ?? "any")
+        }
     }
 }
 
