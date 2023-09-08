@@ -26,7 +26,6 @@ class FirebaseUserRepository: UserRepository {
         }
 
         return Future<User?, Error> { promise in
-            print("user Id" + userId)
             let userRef = self.db.collection("users").document(userId)
 
             userRef.getDocument { (document, error) in

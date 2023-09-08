@@ -6,8 +6,6 @@
 //  Copyright © 2023 Azzam Ubaidillah. All rights reserved.
 //
 
-import Foundation
-
 enum AuthenticationError: Error {
     case registrationFailed
     case loginFailed

@@ -26,8 +26,10 @@ struct MotorcycleApp: App {
         Resolver.register { FirebaseAuthenticationRepository() as AuthenticationRepository }
         Resolver.register { FirebaseUserRepository() as UserRepository }
         Resolver.register { FirebaseProfilePhotoRepository() as ProfilePhotoRepository }
+        Resolver.register { FirebaseMotorcycleRepository() as MotorcycleRepository }
+
+        Resolver.register { HomeViewModel()}
         Resolver.register { ProfileViewModel() }
-        Resolver.register { HomeViewModel() }
         Resolver.register { RegisterViewModel() }
         Resolver.register { LoginViewModel() }
     }

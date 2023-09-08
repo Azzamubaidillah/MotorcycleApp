@@ -93,6 +93,3 @@ class FirebaseProfilePhotoRepository: ProfilePhotoRepository {
     }
 }
 
-enum ProfilePhotoError: Error {
-    case imageConversionError
-}

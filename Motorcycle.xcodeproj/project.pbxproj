@@ -32,6 +32,11 @@
 		8789C80E2AAB4F8C008E3262 /* Imagepicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8789C80D2AAB4F8C008E3262 /* Imagepicker.swift */; };
 		8789C8102AAB51C6008E3262 /* UserError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8789C80F2AAB51C6008E3262 /* UserError.swift */; };
 		8789C8122AAB6F61008E3262 /* EditProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8789C8112AAB6F61008E3262 /* EditProfileView.swift */; };
+		8789C8142AABA381008E3262 /* MotorcycleModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8789C8132AABA381008E3262 /* MotorcycleModel.swift */; };
+		8789C8162AABA8B9008E3262 /* MotorcycleRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8789C8152AABA8B9008E3262 /* MotorcycleRepository.swift */; };
+		8789C8182AABA8CC008E3262 /* FirebaseMotorcycleRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8789C8172AABA8CC008E3262 /* FirebaseMotorcycleRepository.swift */; };
+		8789C81A2AABA96D008E3262 /* ProfilePhotoError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8789C8192AABA96D008E3262 /* ProfilePhotoError.swift */; };
+		8789C8202AABACB2008E3262 /* MotorcycleDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8789C81F2AABACB2008E3262 /* MotorcycleDetailView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -63,6 +68,11 @@
 		8789C80D2AAB4F8C008E3262 /* Imagepicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Imagepicker.swift; sourceTree = "<group>"; };
 		8789C80F2AAB51C6008E3262 /* UserError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserError.swift; sourceTree = "<group>"; };
 		8789C8112AAB6F61008E3262 /* EditProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditProfileView.swift; sourceTree = "<group>"; };
+		8789C8132AABA381008E3262 /* MotorcycleModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MotorcycleModel.swift; sourceTree = "<group>"; };
+		8789C8152AABA8B9008E3262 /* MotorcycleRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MotorcycleRepository.swift; sourceTree = "<group>"; };
+		8789C8172AABA8CC008E3262 /* FirebaseMotorcycleRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseMotorcycleRepository.swift; sourceTree = "<group>"; };
+		8789C8192AABA96D008E3262 /* ProfilePhotoError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfilePhotoError.swift; sourceTree = "<group>"; };
+		8789C81F2AABACB2008E3262 /* MotorcycleDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MotorcycleDetailView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -121,8 +131,8 @@
 		8789C7DD2AAA3AA0008E3262 /* Domain */ = {
 			isa = PBXGroup;
 			children = (
-				8789C7F62AAA4EE0008E3262 /* Repository */,
-				8789C7F32AAA4EBB008E3262 /* Model */,
+				8789C7F62AAA4EE0008E3262 /* Entities */,
+				8789C7F32AAA4EBB008E3262 /* Models */,
 			);
 			path = Domain;
 			sourceTree = "<group>";
@@ -138,6 +148,7 @@
 		8789C7DF2AAA3AAB008E3262 /* UI */ = {
 			isa = PBXGroup;
 			children = (
+				8789C81E2AABACA3008E3262 /* MotorcycleDetail */,
 				8789C80C2AAB4F81008E3262 /* Components */,
 				8789C8032AAB4AC9008E3262 /* Profile */,
 				8789C7EE2AAA42E0008E3262 /* Home */,
@@ -183,22 +194,24 @@
 			path = Home;
 			sourceTree = "<group>";
 		};
-		8789C7F32AAA4EBB008E3262 /* Model */ = {
+		8789C7F32AAA4EBB008E3262 /* Models */ = {
 			isa = PBXGroup;
 			children = (
 				8789C7F42AAA4EC6008E3262 /* UserModel.swift */,
+				8789C8132AABA381008E3262 /* MotorcycleModel.swift */,
 			);
-			path = Model;
+			path = Models;
 			sourceTree = "<group>";
 		};
-		8789C7F62AAA4EE0008E3262 /* Repository */ = {
+		8789C7F62AAA4EE0008E3262 /* Entities */ = {
 			isa = PBXGroup;
 			children = (
 				8789C7F72AAA4EF2008E3262 /* AuthenticationRepository.swift */,
 				8789C7FF2AAA55DF008E3262 /* UserRepository.swift */,
 				8789C8082AAB4BA0008E3262 /* ProfilePhotoRepository.swift */,
+				8789C8152AABA8B9008E3262 /* MotorcycleRepository.swift */,
 			);
-			path = Repository;
+			path = Entities;
 			sourceTree = "<group>";
 		};
 		8789C7F92AAA4F24008E3262 /* Repository */ = {
@@ -207,6 +220,7 @@
 				8789C7FA2AAA4F3C008E3262 /* FirebaseAuthenticationRepository.swift */,
 				8789C8012AAA5604008E3262 /* FirebaseUserRepository.swift */,
 				8789C80A2AAB4C25008E3262 /* FirebaseProfilePhotoRepository.swift */,
+				8789C8172AABA8CC008E3262 /* FirebaseMotorcycleRepository.swift */,
 			);
 			path = Repository;
 			sourceTree = "<group>";
@@ -216,6 +230,7 @@
 			children = (
 				8789C7FC2AAA5084008E3262 /* AuthenticationError.swift */,
 				8789C80F2AAB51C6008E3262 /* UserError.swift */,
+				8789C8192AABA96D008E3262 /* ProfilePhotoError.swift */,
 			);
 			path = Enums;
 			sourceTree = "<group>";
@@ -236,6 +251,14 @@
 				8789C80D2AAB4F8C008E3262 /* Imagepicker.swift */,
 			);
 			path = Components;
+			sourceTree = "<group>";
+		};
+		8789C81E2AABACA3008E3262 /* MotorcycleDetail */ = {
+			isa = PBXGroup;
+			children = (
+				8789C81F2AABACB2008E3262 /* MotorcycleDetailView.swift */,
+			);
+			path = MotorcycleDetail;
 			sourceTree = "<group>";
 		};
 		FBC85352FD661608A9DD15A0 /* Frameworks */ = {
@@ -373,6 +396,7 @@
 			files = (
 				8789C8122AAB6F61008E3262 /* EditProfileView.swift in Sources */,
 				8789C8002AAA55DF008E3262 /* UserRepository.swift in Sources */,
+				8789C8202AABACB2008E3262 /* MotorcycleDetailView.swift in Sources */,
 				8789C7E82AAA412A008E3262 /* RegisterView.swift in Sources */,
 				8789C7CD2AAA26AD008E3262 /* MotorcycleApp.swift in Sources */,
 				8789C8102AAB51C6008E3262 /* UserError.swift in Sources */,
@@ -385,10 +409,14 @@
 				8789C8072AAB4AEA008E3262 /* ProfileView.swift in Sources */,
 				8789C7F22AAA42F4008E3262 /* HomeView.swift in Sources */,
 				8789C8052AAB4AE2008E3262 /* ProfileViewModel.swift in Sources */,
+				8789C8142AABA381008E3262 /* MotorcycleModel.swift in Sources */,
+				8789C81A2AABA96D008E3262 /* ProfilePhotoError.swift in Sources */,
 				8789C7E52AAA4119008E3262 /* LoginView.swift in Sources */,
 				8789C8092AAB4BA0008E3262 /* ProfilePhotoRepository.swift in Sources */,
 				8789C7FB2AAA4F3C008E3262 /* FirebaseAuthenticationRepository.swift in Sources */,
 				8789C7F52AAA4EC6008E3262 /* UserModel.swift in Sources */,
+				8789C8182AABA8CC008E3262 /* FirebaseMotorcycleRepository.swift in Sources */,
+				8789C8162AABA8B9008E3262 /* MotorcycleRepository.swift in Sources */,
 				8789C7FD2AAA5084008E3262 /* AuthenticationError.swift in Sources */,
 				8789C7E32AAA3B97008E3262 /* LoginViewModel.swift in Sources */,
 				8789C80E2AAB4F8C008E3262 /* Imagepicker.swift in Sources */,
