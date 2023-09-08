@@ -1,5 +1,5 @@
 //
-//  ProfileView.swift
+//  EditProfileView.swift
 //  Motorcycle
 //
 //  Created by Azzam Ubaidillah on 08/09/23.
@@ -8,7 +8,7 @@
 
 import SwiftUI
 
-struct ProfileView: View {
+struct EditProfileView: View {
     @ObservedObject var viewModel: ProfileViewModel
     @State private var isEditingPhoto = false
 
@@ -28,44 +28,36 @@ struct ProfileView: View {
                         .frame(width: 100, height: 100)
                 }
 
-                Text("Email: \(viewModel.email)")
-                    .font(.headline)
-                    .padding()
-
-                Text("First Name: \(viewModel.firstName)")
-                    .font(.headline)
-                    .padding()
-
-                Text("Last Name: \(viewModel.lastName)")
-                    .font(.headline)
-                    .padding()
-
-                NavigationLink(destination: EditProfileView(viewModel: viewModel)) {
-                    Text("Edit Profile")
+                Button(action: {
+                    isEditingPhoto = true
+                }) {
+                    Text("Change Photo")
                         .padding()
                         .background(Color.blue)
                         .foregroundColor(.white)
                         .cornerRadius(8)
                 }
-                .padding()
+                .sheet(isPresented: $isEditingPhoto) {
+                    ImagePicker(selectedImage: $viewModel.profilePhoto)
+                }
 
-                Button("Logout") {
-                    viewModel.logout()
+                TextField("First Name", text: $viewModel.firstName)
+                    .textFieldStyle(RoundedBorderTextFieldStyle())
+                    .padding()
+
+                TextField("Last Name", text: $viewModel.lastName)
+                    .textFieldStyle(RoundedBorderTextFieldStyle())
+                    .padding()
+
+                Button("Save Changes") {
+                    viewModel.updateProfile()
                 }
                 .padding()
 
                 Spacer()
             }
             .padding()
-            .navigationTitle("Profile")
+            .navigationTitle("Edit Profile")
         }
-    }
-}
-
-
-struct ProfileView_Previews: PreviewProvider {
-    static var previews: some View {
-        let viewModel = ProfileViewModel()
-        return ProfileView(viewModel: viewModel)
     }
 }

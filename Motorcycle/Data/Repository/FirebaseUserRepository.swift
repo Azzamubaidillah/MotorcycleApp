@@ -81,5 +81,19 @@ class FirebaseUserRepository: UserRepository {
         }
         .eraseToAnyPublisher()
     }
+    
+    // - MARK: Logout
+    
+    func logout() -> AnyPublisher<Void, Error> {
+        return Future { promise in
+            do {
+                try Auth.auth().signOut()
+                promise(.success(()))
+            } catch {
+                promise(.failure(error))
+            }
+        }
+        .eraseToAnyPublisher()
+    }
 }
 

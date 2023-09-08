@@ -34,17 +34,4 @@ class HomeViewModel: ObservableObject {
             }
             .store(in: &cancellables)
     }
-
-    func logout() {
-        authRepository.logout()
-            .sink { [weak self] completion in
-                if case let .failure(error) = completion {
-                    // Handle logout error
-                    print("Logout error: \(error.localizedDescription)")
-                }
-            } receiveValue: { _ in
-                // Logout successful, perform any necessary actions
-            }
-            .store(in: &cancellables)
-    }
 }

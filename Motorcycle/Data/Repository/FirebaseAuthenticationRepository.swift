@@ -46,18 +46,6 @@ class FirebaseAuthenticationRepository: AuthenticationRepository {
         }
         .eraseToAnyPublisher()
     }
-
-    func logout() -> AnyPublisher<Void, Error> {
-        return Future { promise in
-            do {
-                try Auth.auth().signOut()
-                promise(.success(()))
-            } catch {
-                promise(.failure(error))
-            }
-        }
-        .eraseToAnyPublisher()
-    }
     
     func createUserDocument(uid: String, email: String, firstName: String, lastName: String) {
         let db = Firestore.firestore()
@@ -67,7 +55,7 @@ class FirebaseAuthenticationRepository: AuthenticationRepository {
             "email": email,
             "firstName": firstName,
             "lastName": lastName,
-            // Add any other user-related data here
+            "profilePhotoURL": ""
         ]) { error in
             if let error = error {
                 // Handle the Firestore data creation error

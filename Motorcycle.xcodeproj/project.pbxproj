@@ -31,6 +31,7 @@
 		8789C80B2AAB4C25008E3262 /* FirebaseProfilePhotoRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8789C80A2AAB4C25008E3262 /* FirebaseProfilePhotoRepository.swift */; };
 		8789C80E2AAB4F8C008E3262 /* Imagepicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8789C80D2AAB4F8C008E3262 /* Imagepicker.swift */; };
 		8789C8102AAB51C6008E3262 /* UserError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8789C80F2AAB51C6008E3262 /* UserError.swift */; };
+		8789C8122AAB6F61008E3262 /* EditProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8789C8112AAB6F61008E3262 /* EditProfileView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -61,6 +62,7 @@
 		8789C80A2AAB4C25008E3262 /* FirebaseProfilePhotoRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseProfilePhotoRepository.swift; sourceTree = "<group>"; };
 		8789C80D2AAB4F8C008E3262 /* Imagepicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Imagepicker.swift; sourceTree = "<group>"; };
 		8789C80F2AAB51C6008E3262 /* UserError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserError.swift; sourceTree = "<group>"; };
+		8789C8112AAB6F61008E3262 /* EditProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditProfileView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -223,6 +225,7 @@
 			children = (
 				8789C8042AAB4AE2008E3262 /* ProfileViewModel.swift */,
 				8789C8062AAB4AEA008E3262 /* ProfileView.swift */,
+				8789C8112AAB6F61008E3262 /* EditProfileView.swift */,
 			);
 			path = Profile;
 			sourceTree = "<group>";
@@ -368,6 +371,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8789C8122AAB6F61008E3262 /* EditProfileView.swift in Sources */,
 				8789C8002AAA55DF008E3262 /* UserRepository.swift in Sources */,
 				8789C7E82AAA412A008E3262 /* RegisterView.swift in Sources */,
 				8789C7CD2AAA26AD008E3262 /* MotorcycleApp.swift in Sources */,
