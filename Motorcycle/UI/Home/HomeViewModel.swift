@@ -10,6 +10,7 @@ import Combine
 import Resolver
 
 class HomeViewModel: ObservableObject {
+    @Published var uid: String = ""
     @Published var email: String = ""
     @Published var firstName: String = ""
     @Published var lastName: String = ""
@@ -39,7 +40,7 @@ class HomeViewModel: ObservableObject {
                     print("Error fetching user: \(error.localizedDescription)")
                 }
             }, receiveValue: { user in
-                // Update the UI with the fetched user data
+                self.uid = user?.uid ?? "default"
                 self.firstName = user?.firstName ?? "default"
                 self.lastName = user?.lastName ?? "default"
                 self.email = user?.email ?? "default"

@@ -7,36 +7,57 @@
 //
 
 import SwiftUI
+import Resolver
 
 struct MotorcycleDetailView: View {
     let motorcycle: Motorcycle
+    let uid: String
+    @State private var isOrdering = false
 
     var body: some View {
         VStack {
-            Image(systemName: "photo") // Placeholder image or load from URL
-                .resizable()
-                .aspectRatio(contentMode: .fit)
-                .frame(maxHeight: 200)
-
+            AsyncImage(url: URL(string: motorcycle.imageUrl)) { image in
+                image
+                    .resizable()
+                    .aspectRatio(contentMode: .fill)
+                    .frame(width: 200, height: 200)
+            } placeholder: {
+                Image(systemName: "photo")
+                    .resizable()
+                    .aspectRatio(contentMode: .fit)
+                    .frame(width: 200, height: 200)
+            }
+            
             Text(motorcycle.name)
                 .font(.largeTitle)
                 .padding()
-
+            
             Text("Price: $\(motorcycle.price)")
                 .font(.headline)
                 .padding()
-
+            
             Text("Power: \(motorcycle.power)")
                 .font(.subheadline)
                 .padding()
-
+            
             Text("Torque: \(motorcycle.torque)")
                 .font(.subheadline)
                 .padding()
-
+            
             // Add more motorcycle details as needed
-
+            
+            NavigationLink(
+                destination: OrderView(
+                    viewModel: Resolver.resolve(OrderViewModel.self), motorcycle: motorcycle, uid: uid)) {
+                Text("Order Bike")
+                    .padding()
+                    .background(Color.blue)
+                    .foregroundColor(.white)
+                    .cornerRadius(8)
+            }
+            
             Spacer()
         }
     }
 }
+

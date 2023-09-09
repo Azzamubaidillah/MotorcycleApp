@@ -27,11 +27,13 @@ struct MotorcycleApp: App {
         Resolver.register { FirebaseUserRepository() as UserRepository }
         Resolver.register { FirebaseProfilePhotoRepository() as ProfilePhotoRepository }
         Resolver.register { FirebaseMotorcycleRepository() as MotorcycleRepository }
+        Resolver.register { FirebaseOrderRepository() as OrderRepository }
 
         Resolver.register { HomeViewModel()}
         Resolver.register { ProfileViewModel() }
         Resolver.register { RegisterViewModel() }
         Resolver.register { LoginViewModel() }
+        Resolver.register { OrderViewModel() }
     }
 
     @StateObject private var sessionManager = SessionManager()

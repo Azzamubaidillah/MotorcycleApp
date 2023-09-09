@@ -20,7 +20,7 @@ struct HomeView: View {
                     .padding()
 
                 List(viewModel.motorcycles, id: \.uid) { motorcycle in
-                    NavigationLink(destination: MotorcycleDetailView(motorcycle: motorcycle)) {
+                    NavigationLink(destination: MotorcycleDetailView(motorcycle: motorcycle, uid: viewModel.uid)) {
                         MotorcycleThumbnailView(motorcycle: motorcycle)
                     }
                 }

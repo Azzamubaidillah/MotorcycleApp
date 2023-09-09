@@ -37,6 +37,12 @@
 		8789C8182AABA8CC008E3262 /* FirebaseMotorcycleRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8789C8172AABA8CC008E3262 /* FirebaseMotorcycleRepository.swift */; };
 		8789C81A2AABA96D008E3262 /* ProfilePhotoError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8789C8192AABA96D008E3262 /* ProfilePhotoError.swift */; };
 		8789C8202AABACB2008E3262 /* MotorcycleDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8789C81F2AABACB2008E3262 /* MotorcycleDetailView.swift */; };
+		8789C8232AAC6F95008E3262 /* OrderModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8789C8222AAC6F95008E3262 /* OrderModel.swift */; };
+		8789C8252AAC6FDA008E3262 /* OrderStatus.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8789C8242AAC6FDA008E3262 /* OrderStatus.swift */; };
+		8789C8272AAC70A4008E3262 /* OrderReporitory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8789C8262AAC70A4008E3262 /* OrderReporitory.swift */; };
+		8789C8292AAC710A008E3262 /* FirebaseOrderRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8789C8282AAC710A008E3262 /* FirebaseOrderRepository.swift */; };
+		8789C82B2AAC724C008E3262 /* OrderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8789C82A2AAC724C008E3262 /* OrderView.swift */; };
+		8789C82E2AAC7260008E3262 /* OrderViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8789C82D2AAC7260008E3262 /* OrderViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -73,6 +79,13 @@
 		8789C8172AABA8CC008E3262 /* FirebaseMotorcycleRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseMotorcycleRepository.swift; sourceTree = "<group>"; };
 		8789C8192AABA96D008E3262 /* ProfilePhotoError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfilePhotoError.swift; sourceTree = "<group>"; };
 		8789C81F2AABACB2008E3262 /* MotorcycleDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MotorcycleDetailView.swift; sourceTree = "<group>"; };
+		8789C8212AAC6B20008E3262 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		8789C8222AAC6F95008E3262 /* OrderModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderModel.swift; sourceTree = "<group>"; };
+		8789C8242AAC6FDA008E3262 /* OrderStatus.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderStatus.swift; sourceTree = "<group>"; };
+		8789C8262AAC70A4008E3262 /* OrderReporitory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderReporitory.swift; sourceTree = "<group>"; };
+		8789C8282AAC710A008E3262 /* FirebaseOrderRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseOrderRepository.swift; sourceTree = "<group>"; };
+		8789C82A2AAC724C008E3262 /* OrderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderView.swift; sourceTree = "<group>"; };
+		8789C82D2AAC7260008E3262 /* OrderViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -108,12 +121,13 @@
 		8789C7CB2AAA26AD008E3262 /* Motorcycle */ = {
 			isa = PBXGroup;
 			children = (
+				8789C8212AAC6B20008E3262 /* Info.plist */,
 				8789C7DA2AAA3661008E3262 /* GoogleService-Info.plist */,
 				8789C7D02AAA26B0008E3262 /* Assets.xcassets */,
+				8789C7FE2AAA50E7008E3262 /* Enums */,
 				8789C7E02AAA3AB8008E3262 /* Common */,
 				8789C7DE2AAA3AA6008E3262 /* Data */,
 				8789C7DD2AAA3AA0008E3262 /* Domain */,
-				8789C7FE2AAA50E7008E3262 /* Enums */,
 				8789C7DF2AAA3AAB008E3262 /* UI */,
 				8789C7D22AAA26B0008E3262 /* Preview Content */,
 			);
@@ -148,6 +162,7 @@
 		8789C7DF2AAA3AAB008E3262 /* UI */ = {
 			isa = PBXGroup;
 			children = (
+				8789C82C2AAC7250008E3262 /* Order */,
 				8789C81E2AABACA3008E3262 /* MotorcycleDetail */,
 				8789C80C2AAB4F81008E3262 /* Components */,
 				8789C8032AAB4AC9008E3262 /* Profile */,
@@ -199,6 +214,7 @@
 			children = (
 				8789C7F42AAA4EC6008E3262 /* UserModel.swift */,
 				8789C8132AABA381008E3262 /* MotorcycleModel.swift */,
+				8789C8222AAC6F95008E3262 /* OrderModel.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -210,6 +226,7 @@
 				8789C7FF2AAA55DF008E3262 /* UserRepository.swift */,
 				8789C8082AAB4BA0008E3262 /* ProfilePhotoRepository.swift */,
 				8789C8152AABA8B9008E3262 /* MotorcycleRepository.swift */,
+				8789C8262AAC70A4008E3262 /* OrderReporitory.swift */,
 			);
 			path = Entities;
 			sourceTree = "<group>";
@@ -221,6 +238,7 @@
 				8789C8012AAA5604008E3262 /* FirebaseUserRepository.swift */,
 				8789C80A2AAB4C25008E3262 /* FirebaseProfilePhotoRepository.swift */,
 				8789C8172AABA8CC008E3262 /* FirebaseMotorcycleRepository.swift */,
+				8789C8282AAC710A008E3262 /* FirebaseOrderRepository.swift */,
 			);
 			path = Repository;
 			sourceTree = "<group>";
@@ -231,6 +249,7 @@
 				8789C7FC2AAA5084008E3262 /* AuthenticationError.swift */,
 				8789C80F2AAB51C6008E3262 /* UserError.swift */,
 				8789C8192AABA96D008E3262 /* ProfilePhotoError.swift */,
+				8789C8242AAC6FDA008E3262 /* OrderStatus.swift */,
 			);
 			path = Enums;
 			sourceTree = "<group>";
@@ -259,6 +278,15 @@
 				8789C81F2AABACB2008E3262 /* MotorcycleDetailView.swift */,
 			);
 			path = MotorcycleDetail;
+			sourceTree = "<group>";
+		};
+		8789C82C2AAC7250008E3262 /* Order */ = {
+			isa = PBXGroup;
+			children = (
+				8789C82A2AAC724C008E3262 /* OrderView.swift */,
+				8789C82D2AAC7260008E3262 /* OrderViewModel.swift */,
+			);
+			path = Order;
 			sourceTree = "<group>";
 		};
 		FBC85352FD661608A9DD15A0 /* Frameworks */ = {
@@ -395,6 +423,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				8789C8122AAB6F61008E3262 /* EditProfileView.swift in Sources */,
+				8789C82E2AAC7260008E3262 /* OrderViewModel.swift in Sources */,
+				8789C8232AAC6F95008E3262 /* OrderModel.swift in Sources */,
 				8789C8002AAA55DF008E3262 /* UserRepository.swift in Sources */,
 				8789C8202AABACB2008E3262 /* MotorcycleDetailView.swift in Sources */,
 				8789C7E82AAA412A008E3262 /* RegisterView.swift in Sources */,
@@ -405,6 +435,7 @@
 				8789C7F82AAA4EF2008E3262 /* AuthenticationRepository.swift in Sources */,
 				8789C8022AAA5604008E3262 /* FirebaseUserRepository.swift in Sources */,
 				8789C7ED2AAA42BA008E3262 /* SessionManager.swift in Sources */,
+				8789C8252AAC6FDA008E3262 /* OrderStatus.swift in Sources */,
 				8789C7EB2AAA4142008E3262 /* RegisterViewModel.swift in Sources */,
 				8789C8072AAB4AEA008E3262 /* ProfileView.swift in Sources */,
 				8789C7F22AAA42F4008E3262 /* HomeView.swift in Sources */,
@@ -418,8 +449,11 @@
 				8789C8182AABA8CC008E3262 /* FirebaseMotorcycleRepository.swift in Sources */,
 				8789C8162AABA8B9008E3262 /* MotorcycleRepository.swift in Sources */,
 				8789C7FD2AAA5084008E3262 /* AuthenticationError.swift in Sources */,
+				8789C8272AAC70A4008E3262 /* OrderReporitory.swift in Sources */,
+				8789C8292AAC710A008E3262 /* FirebaseOrderRepository.swift in Sources */,
 				8789C7E32AAA3B97008E3262 /* LoginViewModel.swift in Sources */,
 				8789C80E2AAB4F8C008E3262 /* Imagepicker.swift in Sources */,
+				8789C82B2AAC724C008E3262 /* OrderView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -558,6 +592,7 @@
 				ENABLE_PREVIEWS = YES;
 				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = Motorcycle/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -590,6 +625,7 @@
 				ENABLE_PREVIEWS = YES;
 				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = Motorcycle/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
