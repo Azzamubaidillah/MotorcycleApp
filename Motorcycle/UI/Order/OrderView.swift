@@ -11,7 +11,6 @@ import SwiftUI
 struct OrderView: View {
     @ObservedObject var viewModel: OrderViewModel
     
-    
     @State private var deliveryAddress = ""
     @State private var orderNotes = ""
 

@@ -43,6 +43,7 @@
 		8789C8292AAC710A008E3262 /* FirebaseOrderRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8789C8282AAC710A008E3262 /* FirebaseOrderRepository.swift */; };
 		8789C82B2AAC724C008E3262 /* OrderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8789C82A2AAC724C008E3262 /* OrderView.swift */; };
 		8789C82E2AAC7260008E3262 /* OrderViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8789C82D2AAC7260008E3262 /* OrderViewModel.swift */; };
+		8789C8302AACEF88008E3262 /* OrderHistoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8789C82F2AACEF88008E3262 /* OrderHistoryView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -86,6 +87,7 @@
 		8789C8282AAC710A008E3262 /* FirebaseOrderRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseOrderRepository.swift; sourceTree = "<group>"; };
 		8789C82A2AAC724C008E3262 /* OrderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderView.swift; sourceTree = "<group>"; };
 		8789C82D2AAC7260008E3262 /* OrderViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderViewModel.swift; sourceTree = "<group>"; };
+		8789C82F2AACEF88008E3262 /* OrderHistoryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderHistoryView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -285,6 +287,7 @@
 			children = (
 				8789C82A2AAC724C008E3262 /* OrderView.swift */,
 				8789C82D2AAC7260008E3262 /* OrderViewModel.swift */,
+				8789C82F2AACEF88008E3262 /* OrderHistoryView.swift */,
 			);
 			path = Order;
 			sourceTree = "<group>";
@@ -447,6 +450,7 @@
 				8789C7FB2AAA4F3C008E3262 /* FirebaseAuthenticationRepository.swift in Sources */,
 				8789C7F52AAA4EC6008E3262 /* UserModel.swift in Sources */,
 				8789C8182AABA8CC008E3262 /* FirebaseMotorcycleRepository.swift in Sources */,
+				8789C8302AACEF88008E3262 /* OrderHistoryView.swift in Sources */,
 				8789C8162AABA8B9008E3262 /* MotorcycleRepository.swift in Sources */,
 				8789C7FD2AAA5084008E3262 /* AuthenticationError.swift in Sources */,
 				8789C8272AAC70A4008E3262 /* OrderReporitory.swift in Sources */,

@@ -13,7 +13,7 @@ import Resolver
 class OrderViewModel: ObservableObject {
     @Published var orders: [Order] = [] // A property to store fetched orders
 
-    @Injected var orderRepository: OrderRepository 
+    @Injected var orderRepository: OrderRepository
 
     private var cancellables: Set<AnyCancellable> = []
 
@@ -27,7 +27,7 @@ class OrderViewModel: ObservableObject {
         // Get the current user's ID (You may get this from your authentication system)
         let currentUserID = "12345" // Replace with actual user ID
 
-        orderRepository.getOrders(forUser: currentUserID)
+        orderRepository.getOrders()
             .receive(on: DispatchQueue.main)
             .sink(receiveCompletion: { completion in
                 // Handle any completion (e.g., error handling)
@@ -61,4 +61,22 @@ class OrderViewModel: ObservableObject {
             })
             .store(in: &cancellables)
     }
+    
+    func cancelOrder(_ orderId: String) {
+        orderRepository.cancelOrder(orderId)
+            .receive(on: DispatchQueue.main)
+            .sink(receiveCompletion: { completion in
+                // Handle any completion (e.g., error handling)
+                switch completion {
+                case .finished:
+                    break
+                case let .failure(error):
+                    print("Error canceling order: \(error.localizedDescription)")
+                }
+            }, receiveValue: { _ in
+                self.fetchOrders()
+            })
+            .store(in: &cancellables)
+    }
+
 }

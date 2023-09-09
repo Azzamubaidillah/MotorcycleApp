@@ -8,6 +8,7 @@
 
 import Foundation
 import FirebaseFirestore
+import FirebaseAuth
 import Combine
 
 class FirebaseOrderRepository: OrderRepository {
@@ -44,13 +45,16 @@ class FirebaseOrderRepository: OrderRepository {
         }.eraseToAnyPublisher()
     }
     
-    func getOrders(forUser userID: String) -> AnyPublisher<[Order], Error> {
+    func getOrders() -> AnyPublisher<[Order], Error> {
         let ordersCollection = db.collection("orders")
-
+        
+        let userID = Auth.auth().currentUser?.uid ?? ""
+    
         // Query orders for the specified user
         let query = ordersCollection.whereField("userID", isEqualTo: userID)
 
         // Fetch the documents and decode them into Order objects
+        
         return Future<[Order], Error> { promise in
             query.getDocuments { snapshot, error in
                 if let error = error {
@@ -60,8 +64,27 @@ class FirebaseOrderRepository: OrderRepository {
                     let orders = snapshot?.documents.compactMap { document in
                         try? decoder.decode(Order.self, from: document.data())
                     } ?? []
-
+                    print("this is fetch orders repo firease success, orders: \(snapshot?.documents.count ?? 0)")
                     promise(.success(orders))
+                }
+            }
+        }.eraseToAnyPublisher()
+    }
+
+    func cancelOrder(_ orderID: String) -> AnyPublisher<Void, Error> {
+        let ordersCollection = db.collection("orders")
+        
+        // Update the order status to "canceled"
+        let orderRef = ordersCollection.document(orderID)
+        let updateData: [String: Any] = ["orderStatus": OrderStatus.canceled.rawValue]
+        
+        // Use Firestore's updateData method to update the order status
+        return Future<Void, Error> { promise in
+            orderRef.updateData(updateData) { error in
+                if let error = error {
+                    promise(.failure(error))
+                } else {
+                    promise(.success(()))
                 }
             }
         }.eraseToAnyPublisher()

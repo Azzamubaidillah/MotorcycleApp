@@ -11,15 +11,16 @@ import Foundation
 import Resolver
 
 class ProfileViewModel: ObservableObject {
+    @Published var uid: String = ""
     @Published var email: String = ""
     @Published var firstName: String = ""
     @Published var lastName: String = ""
     @Published var profilePhotoURL: String = ""
     @Published var profilePhoto: UIImage?
-
+    
     @Injected var userRepository: UserRepository
     @Injected var profilePhotoRepository: ProfilePhotoRepository
-
+    
     private var cancellables: Set<AnyCancellable> = []
 
     init() {
@@ -39,6 +40,7 @@ class ProfileViewModel: ObservableObject {
                 }
             }, receiveValue: { user in
                 // Update the UI with the fetched user data
+                self.uid = user?.uid ?? "default"
                 self.firstName = user?.firstName ?? "default"
                 self.lastName = user?.lastName ?? "default"
                 self.email = user?.email ?? "default"

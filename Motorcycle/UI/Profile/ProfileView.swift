@@ -7,6 +7,7 @@
 //
 
 import SwiftUI
+import Resolver
 
 struct ProfileView: View {
     @ObservedObject var viewModel: ProfileViewModel
@@ -48,7 +49,16 @@ struct ProfileView: View {
                 Text("Last Name: \(viewModel.lastName)")
                     .font(.headline)
                     .padding()
-
+                
+                NavigationLink(destination: OrderHistoryView(viewModel: Resolver.resolve(OrderViewModel.self))) {
+                    Text("Order History")
+                        .padding()
+                        .background(Color.blue)
+                        .foregroundColor(.white)
+                        .cornerRadius(8)
+                }
+                .padding()
+                
                 NavigationLink(destination: EditProfileView(viewModel: viewModel)) {
                     Text("Edit Profile")
                         .padding()
