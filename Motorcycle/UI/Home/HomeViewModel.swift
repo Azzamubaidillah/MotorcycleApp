@@ -20,7 +20,7 @@ class HomeViewModel: ObservableObject {
     @Injected private var authRepository: AuthenticationRepository
     @Injected private var userRepository: UserRepository
     @Injected private var motorcycleRepository: MotorcycleRepository
-    
+
     private var cancellables = Set<AnyCancellable>()
 
     init() {
@@ -62,7 +62,7 @@ class HomeViewModel: ObservableObject {
             return "Good evening, \(firstName)!"
         }
     }
-    
+
     func fetchMotorcycles() {
         motorcycleRepository.fetchMotorcycles()
             .receive(on: DispatchQueue.main)

@@ -8,6 +8,7 @@
 
 struct Motorcycle: Codable {
     let uid: String
+    let brand: String
     let name: String
     let price: Int
     let power: String
@@ -20,6 +21,7 @@ struct Motorcycle: Codable {
     enum CodingKeys: String, CodingKey {
         case uid
         case name
+        case brand
         case price
         case power
         case torque

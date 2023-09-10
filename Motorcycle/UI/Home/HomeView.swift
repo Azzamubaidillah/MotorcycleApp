@@ -15,17 +15,20 @@ struct HomeView: View {
     var body: some View {
         NavigationView {
             VStack {
-                Text(viewModel.greetingMessage)
-                    .font(.headline)
-                    .padding()
+                TabView {
+                    CatalogueView(viewModel: viewModel)
+                        .tabItem {
+                            Label("Catalogue", systemImage: "list.bullet")
+                        }
 
-                List(viewModel.motorcycles, id: \.uid) { motorcycle in
-                    NavigationLink(destination: MotorcycleDetailView(motorcycle: motorcycle, uid: viewModel.uid)) {
-                        MotorcycleThumbnailView(motorcycle: motorcycle)
+                    GalleryView(viewModel: viewModel
+                    )
+                    .tabItem {
+                        Label("Gallery", systemImage: "photo")
                     }
                 }
             }
-            .navigationTitle("Home")
+            .navigationTitle(viewModel.greetingMessage)
             .navigationBarTitleDisplayMode(.inline)
             .toolbar {
                 ToolbarItem(placement: .navigationBarTrailing) {
@@ -45,29 +48,120 @@ struct HomeView_Previews: PreviewProvider {
     }
 }
 
-struct MotorcycleThumbnailView: View {
+struct CatalogueView: View {
+    @ObservedObject var viewModel: HomeViewModel
+
+    let brands = ["ducati", "yamaha", "honda", "bmw", "aprilia"]
+
+    let columns: [GridItem] = [
+        GridItem(.flexible(minimum: 100, maximum: 200), spacing: 16),
+        GridItem(.flexible(minimum: 100, maximum: 200), spacing: 16),
+    ]
+
+    var body: some View {
+        ScrollView {
+            VStack(alignment: .leading) {
+                Text("Popular Brand")
+                    .fontWeight(.bold)
+
+                HStack {
+                    ForEach(brands, id: \.self) { brand in
+                        Rectangle()
+                            .fill(Color.white)
+                            .frame(width: 50, height: 50)
+                            .overlay(
+                                Image(brand)
+                                    .resizable()
+                                    .aspectRatio(contentMode: .fit)
+                                    .padding(8)
+                            )
+                            .cornerRadius(8)
+                            .padding(.horizontal, 4)
+                            .padding(.vertical, 4)
+                            .shadow(color: Color.black.opacity(0.2), radius: 5, x: 0, y: 2)
+                    }
+                }
+            }
+
+            LazyVGrid(columns: columns, spacing: 16) {
+                ForEach(viewModel.motorcycles, id: \.uid) { motorcycle in
+                    CatalogueCard(motorcycle: motorcycle)
+                }
+            }
+            .padding()
+        }
+    }
+}
+
+struct GalleryView: View {
+    let viewModel: HomeViewModel
+
+    var body: some View {
+        ScrollView(.horizontal, showsIndicators: false) {
+            HStack {
+                ForEach(viewModel.motorcycles, id: \.uid) { image in
+                    VStack {
+                        AsyncImage(url: URL(string: image.imageUrl)) { image in
+                            image
+                                .resizable()
+                                .aspectRatio(contentMode: .fill)
+                                .frame(width: 300, height: 200)
+                        } placeholder: {
+                            Image(systemName: "photo")
+                                .resizable()
+                                .aspectRatio(contentMode: .fit)
+                                .frame(width: 300, height: 200)
+                        }
+                        .cornerRadius(8)
+                        .background(.white)
+                        .padding(.horizontal, 4)
+                        .padding(.vertical, 4)
+                        .shadow(color: Color.black.opacity(0.2), radius: 5, x: 0, y: 2)
+
+                        Text(image.name)
+                            .font(.headline)
+                            .padding(.top, 10)
+                    }
+                }
+            }
+            .padding()
+        }
+    }
+}
+
+struct CatalogueCard: View {
     let motorcycle: Motorcycle
 
     var body: some View {
-        VStack {
+        VStack(alignment: .leading) {
             AsyncImage(url: URL(string: motorcycle.imageUrl)) { image in
                 image
                     .resizable()
-                    .aspectRatio(contentMode: .fill)
-                    .frame(width: 100, height: 100)
+                    .aspectRatio(contentMode: .fit)
+                    .frame(width: 150, height: 150)
             } placeholder: {
                 Image(systemName: "photo")
                     .resizable()
                     .aspectRatio(contentMode: .fit)
-                    .frame(width: 100, height: 100)
+                    .frame(width: 150, height: 150)
             }
 
-            Text(motorcycle.name)
-                .font(.headline)
+            VStack(alignment: .leading) {
+                Text(motorcycle.name)
+                    .font(.headline)
+                    .padding(.top, 10)
 
-            Text("$\(motorcycle.price)")
-                .font(.subheadline)
+                Text("$\(motorcycle.price)")
+                    .font(.subheadline)
+                    .foregroundColor(.green)
+                    .padding(.top, 5)
+
+                Spacer()
+            }
+            .padding()
         }
-        .padding()
+        .background(Color.white)
+        .cornerRadius(10)
+        .shadow(color: Color.gray.opacity(0.4), radius: 5, x: 0, y: 4)
     }
 }
