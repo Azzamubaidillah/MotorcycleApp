@@ -23,7 +23,6 @@ struct ProfileView: View {
                         .frame(width: 100, height: 100)
                         .clipShape(Circle())
                 } else {
-                    // Use the profilePhotoURL directly (no need for optional binding)
                     AsyncImage(url: URL(string: viewModel.profilePhotoURL)) { image in
                         image
                             .resizable()
@@ -49,6 +48,15 @@ struct ProfileView: View {
                 Text("Last Name: \(viewModel.lastName)")
                     .font(.headline)
                     .padding()
+                
+                NavigationLink(destination: SummaryView(viewModel: Resolver.resolve(SummaryViewModel.self))) {
+                    Text("Order Summary")
+                        .padding()
+                        .background(Color.blue)
+                        .foregroundColor(.white)
+                        .cornerRadius(8)
+                }
+                .padding()
                 
                 NavigationLink(destination: OrderHistoryView(viewModel: Resolver.resolve(OrderViewModel.self))) {
                     Text("Order History")

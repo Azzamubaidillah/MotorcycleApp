@@ -12,6 +12,7 @@ struct Order: Codable {
     let orderID: String
     let userID: String
     let motorcycleID: String
+    let motorcycleName: String
     let orderDate: Date
     let orderStatus: OrderStatus
     let paymentInfo: PaymentInfo

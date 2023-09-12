@@ -34,6 +34,7 @@ struct MotorcycleApp: App {
         Resolver.register { RegisterViewModel() }
         Resolver.register { LoginViewModel() }
         Resolver.register { OrderViewModel() }
+        Resolver.register { SummaryViewModel() }
     }
 
     @StateObject private var sessionManager = SessionManager()

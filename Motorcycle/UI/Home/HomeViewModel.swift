@@ -14,6 +14,7 @@ class HomeViewModel: ObservableObject {
     @Published var email: String = ""
     @Published var firstName: String = ""
     @Published var lastName: String = ""
+    @Published var imageUrl: String = ""
     @Published var motorcycles: [Motorcycle] = []
 
     // Inject the AuthenticationRepository
@@ -44,7 +45,8 @@ class HomeViewModel: ObservableObject {
                 self.firstName = user?.firstName ?? "default"
                 self.lastName = user?.lastName ?? "default"
                 self.email = user?.email ?? "default"
-                // Load the profile photo, you can implement this separately
+                self.imageUrl = user?.profilePhotoURL ?? "default"
+                // Load the p rofile photo, you can implement this separately
             })
             .store(in: &cancellables)
     }

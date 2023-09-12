@@ -8,6 +8,10 @@
 
 /* Begin PBXBuildFile section */
 		34950643488F8554E4CF8B21 /* Pods_Motorcycle.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8612BDB6E93E817FC0A38E67 /* Pods_Motorcycle.framework */; };
+		8733512C2AB0DC7D00130EAD /* SummaryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8733512B2AB0DC7D00130EAD /* SummaryView.swift */; };
+		8733512E2AB0DC8C00130EAD /* SummaryViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8733512D2AB0DC8C00130EAD /* SummaryViewModel.swift */; };
+		873351312AB0E00100130EAD /* SwiftUICharts in Frameworks */ = {isa = PBXBuildFile; productRef = 873351302AB0E00100130EAD /* SwiftUICharts */; };
+		873351332AB0F8B100130EAD /* SuccessOrderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 873351322AB0F8B100130EAD /* SuccessOrderView.swift */; };
 		8789C7CD2AAA26AD008E3262 /* MotorcycleApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8789C7CC2AAA26AD008E3262 /* MotorcycleApp.swift */; };
 		8789C7D12AAA26B0008E3262 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8789C7D02AAA26B0008E3262 /* Assets.xcassets */; };
 		8789C7D42AAA26B0008E3262 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8789C7D32AAA26B0008E3262 /* Preview Assets.xcassets */; };
@@ -36,7 +40,6 @@
 		8789C8162AABA8B9008E3262 /* MotorcycleRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8789C8152AABA8B9008E3262 /* MotorcycleRepository.swift */; };
 		8789C8182AABA8CC008E3262 /* FirebaseMotorcycleRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8789C8172AABA8CC008E3262 /* FirebaseMotorcycleRepository.swift */; };
 		8789C81A2AABA96D008E3262 /* ProfilePhotoError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8789C8192AABA96D008E3262 /* ProfilePhotoError.swift */; };
-		8789C8202AABACB2008E3262 /* MotorcycleDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8789C81F2AABACB2008E3262 /* MotorcycleDetailView.swift */; };
 		8789C8232AAC6F95008E3262 /* OrderModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8789C8222AAC6F95008E3262 /* OrderModel.swift */; };
 		8789C8252AAC6FDA008E3262 /* OrderStatus.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8789C8242AAC6FDA008E3262 /* OrderStatus.swift */; };
 		8789C8272AAC70A4008E3262 /* OrderReporitory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8789C8262AAC70A4008E3262 /* OrderReporitory.swift */; };
@@ -44,12 +47,17 @@
 		8789C82B2AAC724C008E3262 /* OrderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8789C82A2AAC724C008E3262 /* OrderView.swift */; };
 		8789C82E2AAC7260008E3262 /* OrderViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8789C82D2AAC7260008E3262 /* OrderViewModel.swift */; };
 		8789C8302AACEF88008E3262 /* OrderHistoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8789C82F2AACEF88008E3262 /* OrderHistoryView.swift */; };
+		8789C8322AAE21D1008E3262 /* DetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8789C8312AAE21D1008E3262 /* DetailView.swift */; };
+		8789C8352AAE5CA2008E3262 /* ModalView in Frameworks */ = {isa = PBXBuildFile; productRef = 8789C8342AAE5CA2008E3262 /* ModalView */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		12ED83D4DDAF06623EF9BB81 /* Pods-Motorcycle.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Motorcycle.debug.xcconfig"; path = "Target Support Files/Pods-Motorcycle/Pods-Motorcycle.debug.xcconfig"; sourceTree = "<group>"; };
 		2F88AF2B2C7D0508C2FB3287 /* Pods-Motorcycle.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Motorcycle.release.xcconfig"; path = "Target Support Files/Pods-Motorcycle/Pods-Motorcycle.release.xcconfig"; sourceTree = "<group>"; };
 		8612BDB6E93E817FC0A38E67 /* Pods_Motorcycle.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Motorcycle.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		8733512B2AB0DC7D00130EAD /* SummaryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SummaryView.swift; sourceTree = "<group>"; };
+		8733512D2AB0DC8C00130EAD /* SummaryViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SummaryViewModel.swift; sourceTree = "<group>"; };
+		873351322AB0F8B100130EAD /* SuccessOrderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SuccessOrderView.swift; sourceTree = "<group>"; };
 		8789C7C92AAA26AD008E3262 /* Motorcycle.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Motorcycle.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8789C7CC2AAA26AD008E3262 /* MotorcycleApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MotorcycleApp.swift; sourceTree = "<group>"; };
 		8789C7D02AAA26B0008E3262 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -79,7 +87,6 @@
 		8789C8152AABA8B9008E3262 /* MotorcycleRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MotorcycleRepository.swift; sourceTree = "<group>"; };
 		8789C8172AABA8CC008E3262 /* FirebaseMotorcycleRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseMotorcycleRepository.swift; sourceTree = "<group>"; };
 		8789C8192AABA96D008E3262 /* ProfilePhotoError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfilePhotoError.swift; sourceTree = "<group>"; };
-		8789C81F2AABACB2008E3262 /* MotorcycleDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MotorcycleDetailView.swift; sourceTree = "<group>"; };
 		8789C8212AAC6B20008E3262 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		8789C8222AAC6F95008E3262 /* OrderModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderModel.swift; sourceTree = "<group>"; };
 		8789C8242AAC6FDA008E3262 /* OrderStatus.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderStatus.swift; sourceTree = "<group>"; };
@@ -88,6 +95,7 @@
 		8789C82A2AAC724C008E3262 /* OrderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderView.swift; sourceTree = "<group>"; };
 		8789C82D2AAC7260008E3262 /* OrderViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderViewModel.swift; sourceTree = "<group>"; };
 		8789C82F2AACEF88008E3262 /* OrderHistoryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderHistoryView.swift; sourceTree = "<group>"; };
+		8789C8312AAE21D1008E3262 /* DetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -95,13 +103,24 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				873351312AB0E00100130EAD /* SwiftUICharts in Frameworks */,
 				34950643488F8554E4CF8B21 /* Pods_Motorcycle.framework in Frameworks */,
+				8789C8352AAE5CA2008E3262 /* ModalView in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		8733512A2AB0DBF800130EAD /* Summary */ = {
+			isa = PBXGroup;
+			children = (
+				8733512B2AB0DC7D00130EAD /* SummaryView.swift */,
+				8733512D2AB0DC8C00130EAD /* SummaryViewModel.swift */,
+			);
+			path = Summary;
+			sourceTree = "<group>";
+		};
 		8789C7C02AAA26AD008E3262 = {
 			isa = PBXGroup;
 			children = (
@@ -164,8 +183,8 @@
 		8789C7DF2AAA3AAB008E3262 /* UI */ = {
 			isa = PBXGroup;
 			children = (
+				8733512A2AB0DBF800130EAD /* Summary */,
 				8789C82C2AAC7250008E3262 /* Order */,
-				8789C81E2AABACA3008E3262 /* MotorcycleDetail */,
 				8789C80C2AAB4F81008E3262 /* Components */,
 				8789C8032AAB4AC9008E3262 /* Profile */,
 				8789C7EE2AAA42E0008E3262 /* Home */,
@@ -207,6 +226,7 @@
 			children = (
 				8789C7EF2AAA42EA008E3262 /* HomeViewModel.swift */,
 				8789C7F12AAA42F3008E3262 /* HomeView.swift */,
+				8789C8312AAE21D1008E3262 /* DetailView.swift */,
 			);
 			path = Home;
 			sourceTree = "<group>";
@@ -274,20 +294,13 @@
 			path = Components;
 			sourceTree = "<group>";
 		};
-		8789C81E2AABACA3008E3262 /* MotorcycleDetail */ = {
-			isa = PBXGroup;
-			children = (
-				8789C81F2AABACB2008E3262 /* MotorcycleDetailView.swift */,
-			);
-			path = MotorcycleDetail;
-			sourceTree = "<group>";
-		};
 		8789C82C2AAC7250008E3262 /* Order */ = {
 			isa = PBXGroup;
 			children = (
 				8789C82A2AAC724C008E3262 /* OrderView.swift */,
 				8789C82D2AAC7260008E3262 /* OrderViewModel.swift */,
 				8789C82F2AACEF88008E3262 /* OrderHistoryView.swift */,
+				873351322AB0F8B100130EAD /* SuccessOrderView.swift */,
 			);
 			path = Order;
 			sourceTree = "<group>";
@@ -327,6 +340,10 @@
 			dependencies = (
 			);
 			name = Motorcycle;
+			packageProductDependencies = (
+				8789C8342AAE5CA2008E3262 /* ModalView */,
+				873351302AB0E00100130EAD /* SwiftUICharts */,
+			);
 			productName = Motorcycle;
 			productReference = 8789C7C92AAA26AD008E3262 /* Motorcycle.app */;
 			productType = "com.apple.product-type.application";
@@ -356,6 +373,10 @@
 				Base,
 			);
 			mainGroup = 8789C7C02AAA26AD008E3262;
+			packageReferences = (
+				8789C8332AAE5CA2008E3262 /* XCRemoteSwiftPackageReference "modal-view" */,
+				8733512F2AB0E00100130EAD /* XCRemoteSwiftPackageReference "ChartView" */,
+			);
 			productRefGroup = 8789C7CA2AAA26AD008E3262 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -426,10 +447,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				8789C8122AAB6F61008E3262 /* EditProfileView.swift in Sources */,
+				873351332AB0F8B100130EAD /* SuccessOrderView.swift in Sources */,
 				8789C82E2AAC7260008E3262 /* OrderViewModel.swift in Sources */,
 				8789C8232AAC6F95008E3262 /* OrderModel.swift in Sources */,
 				8789C8002AAA55DF008E3262 /* UserRepository.swift in Sources */,
-				8789C8202AABACB2008E3262 /* MotorcycleDetailView.swift in Sources */,
 				8789C7E82AAA412A008E3262 /* RegisterView.swift in Sources */,
 				8789C7CD2AAA26AD008E3262 /* MotorcycleApp.swift in Sources */,
 				8789C8102AAB51C6008E3262 /* UserError.swift in Sources */,
@@ -437,6 +458,8 @@
 				8789C7F02AAA42EA008E3262 /* HomeViewModel.swift in Sources */,
 				8789C7F82AAA4EF2008E3262 /* AuthenticationRepository.swift in Sources */,
 				8789C8022AAA5604008E3262 /* FirebaseUserRepository.swift in Sources */,
+				8733512E2AB0DC8C00130EAD /* SummaryViewModel.swift in Sources */,
+				8733512C2AB0DC7D00130EAD /* SummaryView.swift in Sources */,
 				8789C7ED2AAA42BA008E3262 /* SessionManager.swift in Sources */,
 				8789C8252AAC6FDA008E3262 /* OrderStatus.swift in Sources */,
 				8789C7EB2AAA4142008E3262 /* RegisterViewModel.swift in Sources */,
@@ -444,6 +467,7 @@
 				8789C7F22AAA42F4008E3262 /* HomeView.swift in Sources */,
 				8789C8052AAB4AE2008E3262 /* ProfileViewModel.swift in Sources */,
 				8789C8142AABA381008E3262 /* MotorcycleModel.swift in Sources */,
+				8789C8322AAE21D1008E3262 /* DetailView.swift in Sources */,
 				8789C81A2AABA96D008E3262 /* ProfilePhotoError.swift in Sources */,
 				8789C7E52AAA4119008E3262 /* LoginView.swift in Sources */,
 				8789C8092AAB4BA0008E3262 /* ProfilePhotoRepository.swift in Sources */,
@@ -671,6 +695,38 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		8733512F2AB0E00100130EAD /* XCRemoteSwiftPackageReference "ChartView" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/AppPear/ChartView";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.5.5;
+			};
+		};
+		8789C8332AAE5CA2008E3262 /* XCRemoteSwiftPackageReference "modal-view" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/diniska/modal-view";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.0.1;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		873351302AB0E00100130EAD /* SwiftUICharts */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 8733512F2AB0E00100130EAD /* XCRemoteSwiftPackageReference "ChartView" */;
+			productName = SwiftUICharts;
+		};
+		8789C8342AAE5CA2008E3262 /* ModalView */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 8789C8332AAE5CA2008E3262 /* XCRemoteSwiftPackageReference "modal-view" */;
+			productName = ModalView;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 8789C7C12AAA26AD008E3262 /* Project object */;
 }

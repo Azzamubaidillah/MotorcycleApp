@@ -1,0 +1,23 @@
+{
+  "pins" : [
+    {
+      "identity" : "chartview",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/AppPear/ChartView",
+      "state" : {
+        "revision" : "9115a992c91fa19cbb4f2241084240d38654a1fc",
+        "version" : "1.5.5"
+      }
+    },
+    {
+      "identity" : "modal-view",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/diniska/modal-view",
+      "state" : {
+        "revision" : "3f1a97297112770677b507556f581f7ed561593a",
+        "version" : "1.0.1"
+      }
+    }
+  ],
+  "version" : 2
+}
