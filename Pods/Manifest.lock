@@ -759,6 +759,36 @@ PODS:
     - nanopb/encode (= 2.30909.0)
   - nanopb/decode (2.30909.0)
   - nanopb/encode (2.30909.0)
+  - OneSignal/OneSignal (5.0.1):
+    - OneSignal/OneSignalCore
+    - OneSignal/OneSignalExtension
+    - OneSignal/OneSignalNotifications
+    - OneSignal/OneSignalOSCore
+    - OneSignal/OneSignalOutcomes
+    - OneSignal/OneSignalUser
+  - OneSignal/OneSignalCore (5.0.1)
+  - OneSignal/OneSignalExtension (5.0.1):
+    - OneSignal/OneSignalCore
+    - OneSignal/OneSignalOutcomes
+  - OneSignal/OneSignalInAppMessages (5.0.1):
+    - OneSignal/OneSignalCore
+    - OneSignal/OneSignalNotifications
+    - OneSignal/OneSignalOSCore
+    - OneSignal/OneSignalOutcomes
+    - OneSignal/OneSignalUser
+  - OneSignal/OneSignalNotifications (5.0.1):
+    - OneSignal/OneSignalCore
+    - OneSignal/OneSignalExtension
+    - OneSignal/OneSignalOutcomes
+  - OneSignal/OneSignalOSCore (5.0.1):
+    - OneSignal/OneSignalCore
+  - OneSignal/OneSignalOutcomes (5.0.1):
+    - OneSignal/OneSignalCore
+  - OneSignal/OneSignalUser (5.0.1):
+    - OneSignal/OneSignalCore
+    - OneSignal/OneSignalNotifications
+    - OneSignal/OneSignalOSCore
+    - OneSignal/OneSignalOutcomes
   - PromisesObjC (2.3.1)
   - Resolver (1.5.0)
 
@@ -769,6 +799,8 @@ DEPENDENCIES:
   - FirebaseFirestore
   - FirebaseFirestoreSwift
   - FirebaseStorage
+  - OneSignal/OneSignal (< 6.0, >= 5.0.0)
+  - OneSignal/OneSignalInAppMessages (< 6.0, >= 5.0.0)
   - Resolver
 
 SPEC REPOS:
@@ -792,6 +824,7 @@ SPEC REPOS:
     - GTMSessionFetcher
     - leveldb-library
     - nanopb
+    - OneSignal
     - PromisesObjC
     - Resolver
 
@@ -815,9 +848,10 @@ SPEC CHECKSUMS:
   GTMSessionFetcher: e8647203b65cee28c5f73d0f473d096653945e72
   leveldb-library: f03246171cce0484482ec291f88b6d563699ee06
   nanopb: b552cce312b6c8484180ef47159bc0f65a1f0431
+  OneSignal: 1549ddb3958cee25da7c6b314c4f66a8f3045c97
   PromisesObjC: c50d2056b5253dadbd6c2bea79b0674bd5a52fa4
   Resolver: 68984624572763018fd8ec7b8e3e8df0e3b6bba5
 
-PODFILE CHECKSUM: 65ef4939ac0bb6ae2a654fc9d257fbbdb3b9d896
+PODFILE CHECKSUM: 2152f4b5e77f2ff4e90d19094a9f525a0674b9c5
 
 COCOAPODS: 1.12.1

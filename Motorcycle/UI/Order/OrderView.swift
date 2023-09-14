@@ -143,7 +143,7 @@ struct OrderView: View {
 
         // Call the createOrder method from your OrderViewModel
         viewModel.createOrder(order)
-
+        
         // Close the bottom sheet
         isBottomSheetOpen = false
     }

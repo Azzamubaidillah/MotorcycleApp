@@ -24,9 +24,6 @@ class OrderViewModel: ObservableObject {
 
     // Method to fetch orders for the current user
     func fetchOrders() {
-        // Get the current user's ID (You may get this from your authentication system)
-        let currentUserID = "12345" // Replace with actual user ID
-
         orderRepository.getOrders()
             .receive(on: DispatchQueue.main)
             .sink(receiveCompletion: { completion in
@@ -40,6 +37,7 @@ class OrderViewModel: ObservableObject {
             }, receiveValue: { fetchedOrders in
                 // Update the orders property with fetched orders
                 self.orders = fetchedOrders
+                print(fetchedOrders)
             })
             .store(in: &cancellables)
     }

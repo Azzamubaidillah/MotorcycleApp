@@ -8,12 +8,34 @@
 import FirebaseCore
 import Resolver
 import SwiftUI
+import OneSignalFramework
 
 class AppDelegate: NSObject, UIApplicationDelegate {
-    func application(_ application: UIApplication,
-                     didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]? = nil) -> Bool {
-        FirebaseApp.configure()
+    
+    func getEnvironmentVar(_ name: String) -> String? {
+        guard let rawValue = getenv(name) else { return nil }
+        return String(utf8String: rawValue)
+    }
+    
+    func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey : Any]? = nil) -> Bool {
+    
+        // Remove this method to stop OneSignal Debugging
+        OneSignal.Debug.setLogLevel(.LL_VERBOSE)
 
+        // OneSignal initialization
+        OneSignal.initialize(getEnvironmentVar("ONESIGNAL_APP_ID") ?? "", withLaunchOptions: launchOptions)
+        
+        // requestPermission will show the native iOS notification permission prompt.
+        // We recommend removing the following code and instead using an In-App Message to prompt for notification permission
+        OneSignal.Notifications.requestPermission({ accepted in
+            print("User accepted notifications: \(accepted)")
+        }, fallbackToSettings: true)
+        
+        // Login your customer with externalId
+        // OneSignal.login("EXTERNAL_ID")
+        
+        FirebaseApp.configure()
+        
         return true
     }
 }

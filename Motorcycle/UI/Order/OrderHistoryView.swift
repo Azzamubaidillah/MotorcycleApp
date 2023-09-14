@@ -11,7 +11,7 @@ import SwiftUI
 struct OrderHistoryView: View {
     @ObservedObject var viewModel: OrderViewModel
     @State private var showAlert = false
-    @State private var orderToCancel: Order? // Store the order to cancel
+    @State private var orderToCancel: Order?
 
     var body: some View {
         NavigationView {

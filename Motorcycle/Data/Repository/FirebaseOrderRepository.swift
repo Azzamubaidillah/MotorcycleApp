@@ -22,6 +22,7 @@ class FirebaseOrderRepository: OrderRepository {
             "orderID": order.orderID,
             "userID": order.userID,
             "motorcycleID": order.motorcycleID,
+            "motorcycleName": order.motorcycleName,
             "orderDate": order.orderDate,
             "orderStatus": order.orderStatus.rawValue,
             "paymentInfo": [
@@ -65,6 +66,7 @@ class FirebaseOrderRepository: OrderRepository {
                         try? decoder.decode(Order.self, from: document.data())
                     } ?? []
                     print("this is fetch orders repo firease success, orders: \(snapshot?.documents.count ?? 0)")
+                    print(orders)
                     promise(.success(orders))
                 }
             }
