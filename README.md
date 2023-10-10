@@ -57,7 +57,7 @@ The app follows the Clean Architecture pattern and utilizes the Resolver framewo
 - Firebase Storage for image storage.
 - Firebase Firestore for database operations.
 - Firebase Auth for user authentication.
-- Oneplus and custom backend for notifications.
+- Onesignal and custom backend for notifications.
 
 ## Setup
 
